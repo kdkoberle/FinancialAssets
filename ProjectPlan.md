@@ -5,4 +5,5 @@
 - [ ] Create project structure in intellij and push
 - [ ] Add link to list of indie projects in student repo.
 - [ ] Complete Problem Statement
+- [ ] Complete Wireframes
 
