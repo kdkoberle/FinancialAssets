@@ -6,3 +6,4 @@
 | 9/25 | Started Drawing Wireframes | .5 | Probably halfway through basics |
 | 9/26 | Started time log, added past tasks to log | .2 | |
 | 9/26 | Finishing Wireframes | 1 | |
+| 9/26 | Finishing preliminary project plan | .25 | |
