@@ -7,3 +7,4 @@
 | 9/26 | Started time log, added past tasks to log | .2 | |
 | 9/26 | Finishing Wireframes | 1 | |
 | 9/26 | Finishing preliminary project plan | .25 | |
+| 10/1 | Fleshing out database schema | .5 | Mostly finished |
