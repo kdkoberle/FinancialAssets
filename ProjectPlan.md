@@ -1,17 +1,17 @@
 #Project Plan
 
 ### Week 3
-- [ ] Create project repository on GitHub
-- [ ] Create project structure in intellij and push
-- [ ] Add link to list of indie projects in student repo.
-- [ ] Complete Problem Statement
-- [ ] Complete Wireframes
+- [x] Create project repository on GitHub
+- [x] Create project structure in intellij and push
+- [x] Add link to list of indie projects in student repo.
+- [x] Complete Problem Statement
+- [x] Complete Wireframes
 
 
 ### Week 4
 - [ ] Get css/js theme working in local environment
-- [ ] Get at least one Database Table fleshed out and made (probably user table) 
-- [ ] Get broad Database layout thought through, and designed on paper
+- [x] Get at least one Database Table fleshed out and made (probably user table) 
+- [x] Get broad Database layout thought through, and designed on paper
 - [ ] Find a good Web hosting service
 
 
