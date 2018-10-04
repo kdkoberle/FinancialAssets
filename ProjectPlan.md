@@ -9,7 +9,7 @@
 
 
 ### Week 4
-- [ ] Get css/js theme working in local environment
+- [x] Get css/js theme working in local environment
 - [x] Get at least one Database Table fleshed out and made (probably user table) 
 - [x] Get broad Database layout thought through, and designed on paper
 - [ ] Find a good Web hosting service
