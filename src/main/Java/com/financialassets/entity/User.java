@@ -7,12 +7,26 @@ import javax.persistence.*;
 /**
  * The type User.
  */
+
+@Entity(name = "User")
+@Table(name = "user")
 public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
+    @GenericGenerator(name = "native", strategy = "native")
+    @Column(name = "user_id")
     private int userId;
+
     private String email;
     private String password;
+
+    @Column(name = "first_name")
     private String firstName;
+
+    @Column(name = "last_name")
     private String lastName;
+
 
     /**
      * Gets user id.
