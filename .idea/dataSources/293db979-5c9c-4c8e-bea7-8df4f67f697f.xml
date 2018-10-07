@@ -918,57 +918,97 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="231" parent="3" name="user"/>
-    <column id="232" parent="231" name="user_id">
+    <table id="231" parent="3" name="asset"/>
+    <table id="232" parent="3" name="user"/>
+    <column id="233" parent="231" name="asset_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="233" parent="231" name="email">
+    <column id="234" parent="231" name="asset_type">
+      <Position>2</Position>
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="235" parent="231" name="asset_name">
+      <Position>3</Position>
+      <DataType>varchar(25)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="236" parent="231" name="current_price">
+      <Position>4</Position>
+      <DataType>decimal(13,4 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="237" parent="231" name="asset_asset_id_uindex">
+      <ColNames>asset_id</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <key id="238" parent="231" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>asset_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="239" parent="231" name="asset_asset_id_uindex">
+      <ColNames>asset_id</ColNames>
+      <UnderlyingIndexName>asset_asset_id_uindex</UnderlyingIndexName>
+    </key>
+    <column id="240" parent="232" name="user_id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="241" parent="232" name="email">
       <Position>2</Position>
       <DataType>varchar(80)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="234" parent="231" name="first_name">
+    <column id="242" parent="232" name="first_name">
       <Position>3</Position>
       <DataType>varchar(40)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="235" parent="231" name="last_name">
+    <column id="243" parent="232" name="last_name">
       <Position>4</Position>
       <DataType>varchar(40)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="236" parent="231" name="password">
+    <column id="244" parent="232" name="password">
       <Position>5</Position>
       <DataType>varchar(80)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="237" parent="231" name="user_user_id_uindex">
+    <index id="245" parent="232" name="user_user_id_uindex">
       <ColNames>user_id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="238" parent="231" name="user_email_uindex">
+    <index id="246" parent="232" name="user_email_uindex">
       <ColNames>email</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="239" parent="231" name="PRIMARY">
+    <key id="247" parent="232" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>user_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="240" parent="231" name="user_user_id_uindex">
+    <key id="248" parent="232" name="user_user_id_uindex">
       <ColNames>user_id</ColNames>
       <UnderlyingIndexName>user_user_id_uindex</UnderlyingIndexName>
     </key>
-    <key id="241" parent="231" name="user_email_uindex">
+    <key id="249" parent="232" name="user_email_uindex">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>user_email_uindex</UnderlyingIndexName>
     </key>
