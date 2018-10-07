@@ -11,9 +11,19 @@ import java.math.BigDecimal;
 @Entity(name = "Asset")
 @Table(name = "asset")
 public class Asset {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
+    @GenericGenerator(name = "native", strategy = "native")
+    @Column(name = "asset_id")
     private int assetId;
+
+    @Column(name = "asset_type")
     private String assetType;
+
+    @Column(name = "asset_name")
     private String assetName;
+
+    @Column(name = "current_price")
     private BigDecimal currentPrice;
 
 
