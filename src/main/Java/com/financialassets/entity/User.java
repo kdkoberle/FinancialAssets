@@ -119,6 +119,24 @@ public class User {
     }
 
 
+    /**
+     * No arg constructor
+     */
+    public User() {
+    }
 
-
+    /**
+     * Instantiates a new User.
+     *
+     * @param email     the email
+     * @param password  the password
+     * @param firstName the first name
+     * @param lastName  the last name
+     */
+    public User(String email, String password, String firstName, String lastName) {
+        this.email = email;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
 }

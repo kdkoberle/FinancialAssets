@@ -100,7 +100,23 @@ public class Asset {
     }
 
 
+    /**
+     * Instantiates a new Asset.
+     * No arg
+     */
+    public Asset() {
+    }
 
-
-    
+    /**
+     * Instantiates a new Asset.
+     *
+     * @param assetType    the asset type
+     * @param assetName    the asset name
+     * @param currentPrice the current price
+     */
+    public Asset(String assetType, String assetName, BigDecimal currentPrice) {
+        this.assetType = assetType;
+        this.assetName = assetName;
+        this.currentPrice = currentPrice;
+    }
 }

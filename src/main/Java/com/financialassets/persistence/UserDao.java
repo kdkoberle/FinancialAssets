@@ -15,11 +15,10 @@ import java.util.List;
 
 public class UserDao {
 
+
+
     private final Logger logger = LogManager.getLogger(this.getClass());
     SessionFactory sessionFactory = SessionFactoryProvider.getSessionFactory();
-
-
-
 
 
     /**
