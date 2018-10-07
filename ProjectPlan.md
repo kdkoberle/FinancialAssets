@@ -18,14 +18,15 @@
 
 ### Week 5
 - [ ] Get Basic jsp made for wireframes
-- [ ] Get Add Asset and Summary / Assets working (DAO)
-- [ ] Get database installed on web server
-- [ ] Get started on cron/stock info getter
-- [ ] ?Integrate stock ticker tracker w/ API?
+- [x] Get database installed on web server
+- [ ] Get most tables added and set up
+- [ ] Get Add Asset and User working (dao)
+- [x] Get started on cron/stock info getter (not finalized, researching)
 
 ### Week 6
 - [ ] Get Database totally finalized
 - [ ] Begin on Remove asset
+- [ ] Get summary home screen working
 - [ ] Get stock ticker tracker / asset tracker working
 - [ ] ?Integrate stock ticker tracker w/ API?
 
