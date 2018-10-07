@@ -8,3 +8,5 @@
 | 9/26 | Finishing Wireframes | 1 | |
 | 9/26 | Finishing preliminary project plan | .25 | |
 | 10/1 | Fleshing out database schema | .5 | Mostly finished |
+| 10/7 | user and asset tables | .25 | close to final version (if not final) |
+| 10/7 | user and asset classes and daos set up | .75 | basic versions (more functionality to follow) |
