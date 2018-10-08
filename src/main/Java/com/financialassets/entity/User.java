@@ -29,6 +29,7 @@ public class User {
     @Column(name = "last_name")
     private String lastName;
 
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     private Set<UserAsset> UserAssets = new HashSet<>();
 
 

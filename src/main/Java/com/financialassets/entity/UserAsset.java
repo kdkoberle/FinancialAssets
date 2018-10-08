@@ -1,9 +1,9 @@
 package com.financialassets.entity;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -12,6 +12,9 @@ import java.time.LocalDate;
 public class UserAsset {
 
     @Column(name = "user_asset_id")
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
+    @GenericGenerator(name = "native", strategy = "native")
     private int userAssetId;
 
     @Column(name = "buy_price")
@@ -30,6 +33,7 @@ public class UserAsset {
     @Column(name = "asset_name")
     private String assetName;
 
+    @ManyToOne
     private User user;
 
 
