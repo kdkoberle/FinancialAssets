@@ -3,6 +3,7 @@ import javax.persistence.Entity;
 import org.hibernate.annotations.GenericGenerator;
 import javax.ejb.Local;
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -28,7 +29,8 @@ public class User {
     @Column(name = "last_name")
     private String lastName;
 
-    private Set<UserAsset> assets;
+    private Set<UserAsset> UserAssets = new HashSet<>();
+
 
     /**
      * Gets user id.
@@ -118,6 +120,25 @@ public class User {
      */
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+
+    /**
+     * Gets user assets.
+     *
+     * @return the user assets
+     */
+    public Set<UserAsset> getUserAssets() {
+        return UserAssets;
+    }
+
+    /**
+     * Sets user assets.
+     *
+     * @param userAssets the user assets
+     */
+    public void setUserAssets(Set<UserAsset> userAssets) {
+        UserAssets = userAssets;
     }
 
 
