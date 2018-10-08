@@ -161,5 +161,27 @@ public class UserAsset {
     }
 
 
+    /**
+     * No arg constructor
+     */
+    public UserAsset() {
+    }
+
+    /**
+     * Instantiates a new User asset.
+     *
+     * @param buyPrice  the buy price
+     * @param buyDate   the buy date
+     * @param qty       the qty
+     * @param assetName the asset name
+     */
+    public UserAsset(BigDecimal buyPrice, LocalDate buyDate, int qty, String assetName) {
+        this.buyPrice = buyPrice;
+        this.buyDate = buyDate;
+        this.qty = qty;
+        this.assetName = assetName;
+    }
+
+
 
 }
