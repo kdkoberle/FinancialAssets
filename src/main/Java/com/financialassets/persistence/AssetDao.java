@@ -33,9 +33,6 @@ public class AssetDao {
     }
 
 
-
-
-
     /**
      * update asset
      * @param asset  asset to be inserted or updated
@@ -45,7 +42,6 @@ public class AssetDao {
         session.saveOrUpdate(asset);
         session.close();
     }
-
 
 
     /**
@@ -62,7 +58,6 @@ public class AssetDao {
         session.close();
         return insertedId;
     }
-
 
 
     /**
@@ -93,8 +88,8 @@ public class AssetDao {
 
         session.close();
         return assets;
-
     }
+
     /**
      * No Arg Constructor
      */

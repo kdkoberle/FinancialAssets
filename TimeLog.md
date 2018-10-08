@@ -10,3 +10,4 @@
 | 10/1 | Fleshing out database schema | .5 | Mostly finished |
 | 10/7 | user and asset tables | .25 | close to final version (if not final) |
 | 10/7 | user and asset classes and daos set up | .75 | basic versions (more functionality to follow) |
+| 10/7 | setting up user_asset table and class | .5 | basics and doc |
