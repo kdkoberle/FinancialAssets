@@ -12,7 +12,7 @@
 - [x] Get css/js theme working in local environment
 - [x] Get at least one Database Table fleshed out and made (probably user table) 
 - [x] Get broad Database layout thought through, and designed on paper
-- [ ] Find a good Web hosting service
+
 
 
 
@@ -29,6 +29,7 @@
 - [ ] Get summary home screen working
 - [ ] Get stock ticker tracker / asset tracker working
 - [ ] ?Integrate stock ticker tracker w/ API?
+- [ ] Find a good Web hosting service
 
 ### Week 7
 - [ ] Get user logged in basic setup across those jsps
