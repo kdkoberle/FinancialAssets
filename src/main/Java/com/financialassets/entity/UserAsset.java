@@ -14,9 +14,6 @@ public class UserAsset {
     @Column(name = "user_asset_id")
     private int userAssetId;
 
-    @Column(name = "user_id")
-    private int userId;
-
     @Column(name = "buy_price")
     private BigDecimal buyPrice;
 
@@ -32,6 +29,8 @@ public class UserAsset {
 
     @Column(name = "asset_name")
     private String assetName;
+
+    private User user;
 
 
     /**
@@ -52,23 +51,6 @@ public class UserAsset {
         this.userAssetId = userAssetId;
     }
 
-    /**
-     * Gets user id.
-     *
-     * @return the user id
-     */
-    public int getUserId() {
-        return userId;
-    }
-
-    /**
-     * Sets user id.
-     *
-     * @param userId the user id
-     */
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
 
     /**
      * Gets buy price.
