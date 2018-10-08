@@ -3,6 +3,7 @@ import javax.persistence.Entity;
 import org.hibernate.annotations.GenericGenerator;
 import javax.ejb.Local;
 import javax.persistence.*;
+import java.util.Set;
 
 /**
  * The type User.
@@ -27,6 +28,7 @@ public class User {
     @Column(name = "last_name")
     private String lastName;
 
+    private Set<UserAsset> assets;
 
     /**
      * Gets user id.
