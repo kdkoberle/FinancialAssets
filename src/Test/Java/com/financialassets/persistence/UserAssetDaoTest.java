@@ -1,3 +1,5 @@
+package com.financialassets.persistence;
+
 import com.financialassets.persistence.UserAssetDao;
 
 import org.junit.jupiter.api.BeforeEach;
