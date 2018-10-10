@@ -65,7 +65,9 @@ public class UserAssetDao {
      */
     public void saveOrUpdate(UserAsset userAsset) {
         Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
         session.saveOrUpdate(userAsset);
+        transaction.commit();
         session.close();
     }
 

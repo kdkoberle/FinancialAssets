@@ -34,8 +34,13 @@ public class UserAsset {
     private String assetName;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id",
+    foreignKey = @ForeignKey(name = "user_assets_id_fk"))
+
     private User user;
+
+    @Column(name = "asset_id")
+    private int assetId;
 
 
     /**
@@ -165,6 +170,31 @@ public class UserAsset {
         this.assetName = assetName;
     }
 
+    /**
+     * Gets user.
+     *
+     * @return the user
+     */
+    public User getUser() {
+        return user;
+    }
+
+    /**
+     * Sets user.
+     *
+     * @param user the user
+     */
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public int getAssetId() {
+        return assetId;
+    }
+
+    public void setAssetId(int assetId) {
+        this.assetId = assetId;
+    }
 
     /**
      * No arg constructor
@@ -180,11 +210,12 @@ public class UserAsset {
      * @param qty       the qty
      * @param assetName the asset name
      */
-    public UserAsset(BigDecimal buyPrice, LocalDate buyDate, int qty, String assetName) {
+    public UserAsset(User user, BigDecimal buyPrice, LocalDate buyDate, int qty, String assetName) {
         this.buyPrice = buyPrice;
         this.buyDate = buyDate;
         this.qty = qty;
         this.assetName = assetName;
+        this.user = user;
     }
 
 
