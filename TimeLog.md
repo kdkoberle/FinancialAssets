@@ -12,3 +12,5 @@
 | 10/7 | user and asset classes and daos set up | .75 | basic versions (more functionality to follow) |
 | 10/7 | setting up user_asset table and class | .5 | basics and doc |
 | 10/7 | setting up one-many user - UserAsset | .25 | |
+| 10/9 | working on jsp conversion from template | .25 | half done? |
+| 10/10 | setting up testing for UserAssetDao | .5 | |

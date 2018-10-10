@@ -34,6 +34,7 @@ public class UserAsset {
     private String assetName;
 
     @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
 
 
