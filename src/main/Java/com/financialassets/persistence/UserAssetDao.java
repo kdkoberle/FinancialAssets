@@ -1,6 +1,6 @@
 package com.financialassets.persistence;
-import com.financialassets.entity.UserAsset;
 
+import com.financialassets.entity.UserAsset;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
@@ -13,6 +13,7 @@ import javax.persistence.criteria.Expression;
 import javax.persistence.criteria.Root;
 import java.util.List;
 
+
 public class UserAssetDao {
 
 
@@ -21,6 +22,25 @@ public class UserAssetDao {
     SessionFactory sessionFactory = SessionFactoryProvider.getSessionFactory();
 
 
+    /**
+     * Gets all UserAssets.
+     *
+     * @return List of UserAssets
+     */
+    public List<UserAsset> getAll() {
+        // session/session factory
+        Session session = sessionFactory.openSession();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        // get all userAssets
+        CriteriaQuery<UserAsset> query = builder.createQuery(UserAsset.class);
+        Root<UserAsset> root = query.from(UserAsset.class);
+        List<UserAsset> userAssets = session.createQuery(query).getResultList();
+
+        session.close();
+        return userAssets;
+
+    }
+    
     /**
      * Get by id userAsset.
      *
