@@ -15,8 +15,13 @@ public class UserAssetDaoTest {
      */
     @BeforeEach
     void setUp() {
+        com.financialassets.test.util.Database database = com.financialassets.test.util.Database.getInstance();
+        database.runSQL("cleandb.sql");
 
+        UserAssetDao userAssetDao = new UserAssetDao();
     }
+
+
 
 
 

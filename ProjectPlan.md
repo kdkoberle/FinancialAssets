@@ -17,12 +17,12 @@
 
 
 ### Week 5
-- [ ] Get Basic jsp made for wireframes
+- [x] Get Basic jsp started for wireframes
 - [x] Get database installed on web server
 - [x] Get most tables added and set up
-- [ ] Get one to many working for exercise week 5
+- [x] Get one to many working for exercise week 5
 - [x] Get started on cron/stock info getter (not finalized, researching)
-- [ ] Get Add Asset and User working (dao)
+- [x] Get Add Asset and User working (dao)
 
 ### Week 6
 - [ ] Get Database totally finalized
