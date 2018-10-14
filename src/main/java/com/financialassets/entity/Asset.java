@@ -26,6 +26,8 @@ public class Asset {
     @Column(name = "current_price")
     private BigDecimal currentPrice;
 
+    @OneToMany(mappedBy = "asset", fetch = FetchType.LAZY)
+
 
     /**
      * Gets asset id.
