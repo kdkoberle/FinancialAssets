@@ -26,6 +26,7 @@
 
 ### Week 6
 - [x] Get Database design complete (pre production)
+- [x] Solid backgroud research for alt web hosting (narrowed down to only a few at most)
 - [ ] Get stock ticker tracker / asset tracker working
 - [ ] ?Integrate stock ticker tracker w/ API?
 
