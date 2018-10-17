@@ -4,6 +4,8 @@ import com.financialassets.entity.User;
 import com.financialassets.entity.UserAsset;
 import com.financialassets.persistence.UserAssetDao;
 import com.financialassets.persistence.UserDao;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -14,6 +16,7 @@ import java.time.LocalDate;
 import static org.junit.jupiter.api.Assertions.*;
 
 class UserAssetDaoTest {
+    private final Logger logger = LogManager.getLogger(this.getClass());
 
     UserAssetDao userAssetDao;
 
@@ -83,7 +86,7 @@ class UserAssetDaoTest {
     }
 
     /**
-     * Test that an entry is indeed deleeted
+     * Test that an entry is indeed deleted
      */
     @Test
     void delete() {

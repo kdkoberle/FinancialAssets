@@ -15,6 +15,7 @@ import java.util.List;
 public class AssetDao {
 
 
+
     private final Logger logger = LogManager.getLogger(this.getClass());
     SessionFactory sessionFactory = SessionFactoryProvider.getSessionFactory();
 

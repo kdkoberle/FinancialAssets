@@ -14,4 +14,4 @@
 | 10/7 | setting up one-many user - UserAsset | .25 | |
 | 10/9 | working on jsp conversion from template | .25 | half done? |
 | 10/10 | setting up testing for UserAssetDao | .5 | |
-| 10/10 | UserAssetDao testing | | |
+| 10/10 | UserAssetDao testing | .75 |  |

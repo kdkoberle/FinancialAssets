@@ -1,5 +1,8 @@
 package com.financialassets.entity;
 import javax.persistence.Entity;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.hibernate.annotations.GenericGenerator;
 import javax.ejb.Local;
 import javax.persistence.*;
@@ -10,6 +13,8 @@ import java.time.LocalDateTime;
 @Table(name = "asset_price")
 
 public class AssetPrice {
+    private final Logger logger = LogManager.getLogger(this.getClass());
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
