@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @Table(name = "asset_price")
 
 public class AssetPrice {
-    private final Logger logger = LogManager.getLogger(this.getClass());
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")

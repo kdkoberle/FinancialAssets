@@ -16,7 +16,6 @@ import java.util.Set;
 @Entity(name = "User")
 @Table(name = "user")
 public class User {
-    private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")

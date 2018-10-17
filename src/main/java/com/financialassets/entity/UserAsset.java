@@ -13,7 +13,6 @@ import java.time.LocalDate;
 @Table(name = "user_asset")
 public class UserAsset {
 
-    private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Column(name = "user_asset_id")
     @Id

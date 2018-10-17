@@ -12,6 +12,8 @@
 | 10/7 | user and asset classes and daos set up | .75 | basic versions (more functionality to follow) |
 | 10/7 | setting up user_asset table and class | .5 | basics and doc |
 | 10/7 | setting up one-many user - UserAsset | .25 | |
-| 10/9 | working on jsp conversion from template | .25 | half done? |
+| 10/9 | working on jsp conversion from template | .25 | half done?|
 | 10/10 | setting up testing for UserAssetDao | .5 | |
 | 10/10 | UserAssetDao testing | .75 |  |
+| 10/12 | Adding AssetPrice to Db and java, as well as entity mapping | .25 | |
+| 10/17 | implementing log4j in database class | .25 | | 

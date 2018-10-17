@@ -14,7 +14,7 @@ import java.math.BigDecimal;
 @Entity(name = "Asset")
 @Table(name = "asset")
 public class Asset {
-    private final Logger logger = LogManager.getLogger(this.getClass());
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
