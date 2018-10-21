@@ -42,11 +42,11 @@ public class Database {
         try {
             properties.load (this.getClass().getResourceAsStream("/database.properties"));
         } catch (IOException ioe) {
-            System.out.println("Database.loadProperties()...Cannot load the properties file");
-            ioe.printStackTrace();
+            logger.error("Database.loadProperties()...Cannot load the properties file", ioe);
+
         } catch (Exception e) {
-            System.out.println("Database.loadProperties()..." + e);
-            e.printStackTrace();
+            logger.error("Database.loadProperties()..." + e);
+
         }
 
     }
@@ -67,7 +67,7 @@ public class Database {
         try {
             Class.forName(properties.getProperty("driver"));
         } catch (ClassNotFoundException e) {
-            throw new Exception("Database.connect()... Error: MySQL Driver not found");
+            throw new Exception("Database.connect()... Error: MySQL Driver not found", e);
         }
 
         String url = properties.getProperty("url");
@@ -79,7 +79,7 @@ public class Database {
             try {
                 connection.close();
             } catch (SQLException e) {
-                System.out.println("Cannot close connection" + e);
+                logger.error("Cannot close connection" + e);
             }
         }
 

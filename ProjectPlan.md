@@ -25,22 +25,24 @@
 - [x] Get Add Asset and User working (dao)
 
 ### Week 6
-- [ ] Get Database totally finalized
-- [ ] Begin on Remove asset
-- [ ] Get summary home screen working
+- [x] Get Database design complete (pre production)
+- [x] Solid backgroud research for alt web hosting (narrowed down to only a few at most)
 - [ ] Get stock ticker tracker / asset tracker working
 - [ ] ?Integrate stock ticker tracker w/ API?
-- [ ] Find a good Web hosting service
+
 
 ### Week 7
 - [ ] Get user logged in basic setup across those jsps
 - [ ] Get user creation and basic logging in complete
+- [ ] Begin on Remove asset page
+
 
 ### Week 8
 - [ ] Finish remove asset
-- [ ] Get assett sold selector working/complete
+- [ ] Get asset sold selector working/complete
 - [ ] At least begin on Sold Asset Single page
 - [ ] Begin with graphs
+- [ ] Find a good Web hosting service
 
 ### Week 9
 - [ ] Complete Sold Single Asset page
