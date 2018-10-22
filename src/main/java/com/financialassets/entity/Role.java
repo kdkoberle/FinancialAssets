@@ -5,6 +5,8 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.ejb.Local;
 import javax.persistence.*;
 
+//TODO fix up error page
+
 @Entity(name = "role")
 @Table(name = "role")
 
