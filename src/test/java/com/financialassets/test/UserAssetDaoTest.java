@@ -50,7 +50,6 @@ class DoaFactoryTest {
         UserAsset userAsset = (UserAsset)daoFactory.getById(2);
         assertNotNull(userAsset);
         assertEquals("gold", userAsset.getAssetName());
-
     }
 
 
@@ -58,7 +57,7 @@ class DoaFactoryTest {
     /**
      * Test that save/update works and does change values
      */
-
+    //TODO get this test working
     @Test
     void testSaveOrUpdate() {
         String newAssetName = "Gold";
@@ -77,19 +76,19 @@ class DoaFactoryTest {
     /**
      * Test ability to add a new UserAsset to table
      */
-/**
+
     @Test
     void testInsert() {
+        DaoFactory userDaoFactory = new DaoFactory(User.class);
         User user = new User();
-        user = userDao.getById(1);
-        //assertEquals("Keith", user.getFirstName());
+        user = (User)userDaoFactory.getById(1);
+        assertEquals("Keith", user.getFirstName());
         BigDecimal buyPrice = new BigDecimal(14.50);
         UserAsset newUAsset = new UserAsset(user, buyPrice, LocalDate.now(), 50, "Silver");
         newUAsset.setAssetId(2);
-        DaoFactory.insert(newUAsset);
-        assertEquals(4, DaoFactory.getAll().size());
-
-    }*/
+        daoFactory.insert(newUAsset);
+        assertEquals(4, daoFactory.getAll().size());
+    }
 
     /**
      * Test that an entry is indeed deleted
