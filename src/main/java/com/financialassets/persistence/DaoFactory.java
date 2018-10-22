@@ -43,7 +43,7 @@ public class DaoFactory<T> {
      * @param id  the id
      * @return the databaseEntity of specified type by id
      */
-    public <T>T getById(int id) {
+    public <T> T getById(int id) {
         Session session = getSession();
         T databaseEntity = (T)session.get(type, id);
         session.close();

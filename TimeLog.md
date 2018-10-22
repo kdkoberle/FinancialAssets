@@ -16,4 +16,5 @@
 | 10/10 | setting up testing for UserAssetDao | .5 | |
 | 10/10 | UserAssetDao testing | .75 |  |
 | 10/12 | Adding AssetPrice to Db and java, as well as entity mapping | .25 | |
-| 10/17 | implementing log4j in database class | .25 | | 
+| 10/17 | implementing log4j in database class | .25 | |
+| 10/21 | Setting up DaoFactoring | .5 | Need to implement testing still | 
