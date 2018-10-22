@@ -20,6 +20,7 @@
         <mapping class="com.financialassets.entity.User" />
         <mapping class="com.financialassets.entity.UserAsset" />
         <mapping class="com.financialassets.entity.AssetPrice" />
+        <mapping class="com.financialassets.entity.Role" />
 
 
 

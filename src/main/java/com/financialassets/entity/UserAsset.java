@@ -39,9 +39,6 @@ public class UserAsset {
     @ManyToOne
     @JoinColumn(name = "user_id",
     foreignKey = @ForeignKey(name = "user_assets_id_fk"))
-
-
-
     private User user;
 
     @Column(name = "asset_id")
