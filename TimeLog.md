@@ -18,3 +18,5 @@
 | 10/12 | Adding AssetPrice to Db and java, as well as entity mapping | .25 | |
 | 10/17 | implementing log4j in database class | .25 | |
 | 10/21 | Setting up DaoFactoring | .5 | Need to implement testing still | 
+| 10/21 | DaoFactoring Testing | .5 | save or update issues remaining| 
+| 10/21 | jsp very basic converted working | .1 |
