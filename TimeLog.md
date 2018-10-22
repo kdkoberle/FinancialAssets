@@ -20,3 +20,4 @@
 | 10/21 | Setting up DaoFactoring | .5 | Need to implement testing still | 
 | 10/21 | DaoFactoring Testing | .5 | save or update issues remaining| 
 | 10/21 | jsp very basic converted working | .1 |
+| 10/21 | adding role class and table | .25 |
