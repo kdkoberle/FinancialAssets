@@ -21,3 +21,4 @@
 | 10/21 | DaoFactoring Testing | .5 | save or update issues remaining| 
 | 10/21 | jsp very basic converted working | .1 |
 | 10/21 | adding role class and table | .25 |
+| 10/21 | getting authentiation basics set up for websit | .5 | basics done, polishing, working on other pages to go |
