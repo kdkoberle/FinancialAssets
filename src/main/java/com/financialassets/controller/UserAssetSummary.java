@@ -11,6 +11,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 
 @WebServlet(
+        name = "summary",
         urlPatterns = {"/summary"}
 )
 
