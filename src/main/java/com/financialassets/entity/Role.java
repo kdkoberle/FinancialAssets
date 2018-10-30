@@ -15,16 +15,13 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
     private int id;
-
-    @Column(name = "user_id")
-    private int userId;
-
     @ManyToOne
-    @JoinColumn(name = "user_id",
-            foreignKey = @ForeignKey(name = "role_user_user_id_fk" ))
+    @JoinColumn(name="email", foreignKey = @ForeignKey(name = "role_user_email_fk"))
+    private String email;
+
     private User user;
 
-    private String email;
+
 
     private String role;
 
@@ -48,23 +45,7 @@ public class Role {
         this.id = id;
     }
 
-    /**
-     * Gets user id.
-     *
-     * @return the user id
-     */
-    public int getUserId() {
-        return userId;
-    }
 
-    /**
-     * Sets user id.
-     *
-     * @param userId the user id
-     */
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
 
     /**
      * Gets email.
