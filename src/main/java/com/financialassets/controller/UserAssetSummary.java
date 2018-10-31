@@ -1,6 +1,7 @@
 package com.financialassets.controller;
 
 import com.financialassets.entity.UserAsset;
+import com.financialassets.persistence.DaoFactory;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,8 +12,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 
 @WebServlet(
-        name = "summary",
-        urlPatterns = {"/summary"}
+        urlPatterns = {"/testing.jsp"}
 )
 
 
@@ -22,9 +22,11 @@ public class UserAssetSummary extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         UserAsset userAsset = new UserAsset();
-        //req.setAttribute("users", userDa.getAUser(req.getParameter("last_name")));
-        //RequestDispatcher dispatcher = req.getRequestDispatcher("/results.jsp");
-        //dispatcher.forward(req, resp);
+        DaoFactory assetsDao = new DaoFactory(UserAsset.class);
+        req.setAttribute("userAssets", assetsDao.getAll());
+
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/view-assets.jsp");
+        dispatcher.forward(req, resp);
     }
 
 }
