@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 //TODO fix up error page
 
-@Entity(name = "role")
+@Entity(name = "Role")
 @Table(name = "role")
 
 public class Role {
@@ -15,11 +15,19 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
     private int id;
-    @ManyToOne
-    @JoinColumn(name="email", foreignKey = @ForeignKey(name = "role_user_email_fk"))
+
+
     private String email;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id",
+            foreignKey = @ForeignKey(name = "role_user_user_id_fk")
+    )
     private User user;
+
+    private int userId;
+
+
 
 
 
@@ -83,7 +91,11 @@ public class Role {
         this.role = role;
     }
 
+    public int getUserId() {
+        return userId;
+    }
 
-
-
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
 }
