@@ -3,7 +3,6 @@ package com.financialassets.test;
 import com.financialassets.entity.User;
 import com.financialassets.entity.UserAsset;
 import com.financialassets.persistence.DaoFactory;
-import com.financialassets.persistence.UserDao;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
