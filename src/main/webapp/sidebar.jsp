@@ -11,7 +11,6 @@
     <li class="nav-item active">
         <a class="nav-link" href="index.jsp">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span>
         </a>
     </li>
     <li class="nav-item dropdown">
@@ -25,9 +24,7 @@
             <a class="dropdown-item" href="register.jsp">Register</a>
             <a class="dropdown-item" href="forgot-password.jsp">Forgot Password</a>
             <div class="dropdown-divider"></div>
-            <h6 class="dropdown-header">Other Pages:</h6>
-            <a class="dropdown-item" href="404.jsp">404 Page</a>
-            <a class="dropdown-item" href="blank.jsp">Blank Page</a>
+            <a class="dropdown-item" href="add-asset.jsp">Add Asset</a>
         </div>
     </li>
     <li class="nav-item">
