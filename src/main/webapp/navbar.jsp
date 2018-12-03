@@ -22,6 +22,51 @@
 </form>
 
 <!-- Navbar -->
+    <!-- TradingView Widget BEGIN -->
+    <div class="tradingview-widget-container">
+        <div class="tradingview-widget-container__widget"></div>
+        <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com" rel="noopener" target="_blank"><span class="blue-text">Quotes</span></a> by TradingView</div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>
+            {
+                "symbols": [
+                {
+                    "title": "S&P 500",
+                    "proName": "INDEX:SPX"
+                },
+                {
+                    "title": "Nasdaq 100",
+                    "proName": "INDEX:IUXX"
+                },
+                {
+                    "description": "Gold",
+                    "proName": "TVC:GOLD"
+                },
+                {
+                    "description": "Silver",
+                    "proName": "TVC:SILVER"
+                },
+                {
+                    "description": "WTI Crude",
+                    "proName": "TVC:USOIL"
+                },
+                {
+                    "description": "Copper",
+                    "proName": "OANDA:XCUUSD"
+                },
+                {
+                    "description": "USD",
+                    "proName": "TVC:DXY"
+                },
+                {
+                    "description": "Shanghai Composite",
+                    "proName": "TVC:SHCOMP"
+                }
+            ],
+                "locale": "en"
+            }
+        </script>
+    </div>
+    <!-- TradingView Widget END -->
 <ul class="navbar-nav ml-auto ml-md-0">
     <li class="nav-item dropdown no-arrow mx-1">
         <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
