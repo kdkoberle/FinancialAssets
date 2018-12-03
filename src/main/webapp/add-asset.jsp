@@ -17,7 +17,7 @@
 
 
             <!-- Page Content -->
-            <h1>Add Asset</h1>
+            <h1>Login</h1>
             <hr>
             <p>This is a great starting point for new custom pages.</p>
 

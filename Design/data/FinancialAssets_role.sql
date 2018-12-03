@@ -1,0 +1,2 @@
+INSERT INTO FinancialAssets.role (id, email, user_id, role) VALUES (1, 'kdkoberle@gmail.com', 1, 'admin');
+INSERT INTO FinancialAssets.role (id, email, user_id, role) VALUES (2, 'jimmy@johns.com', 2, 'registered_user');

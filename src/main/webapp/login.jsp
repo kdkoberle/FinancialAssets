@@ -5,6 +5,7 @@
       <div class="card card-login mx-auto mt-5">
         <div class="card-header">Login</div>
         <div class="card-body">
+
           <FORM ACTION="j_security_check" METHOD="POST">
             <div class="form-group">
               <div class="form-label-group">
@@ -28,6 +29,9 @@
             </div>
             <input type="submit" class="btn btn-primary btn-block" href="testing.jsp" value="Login" />
           </FORM>
+
+
+
           <div class="text-center">
             <a class="d-block small mt-3" href="register.jsp">Register an Account</a>
             <a class="d-block small" href="forgot-password.jsp">Forgot Password?</a>
@@ -46,3 +50,5 @@
   </body>
 
 </html>
+
+

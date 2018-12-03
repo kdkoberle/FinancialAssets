@@ -1,0 +1,2 @@
+INSERT INTO FinancialAssets.user (user_id, email, fist_name, last_name, password) VALUES (1, 'kdkoberle@madisoncollege.edu', 'Keith', 'Koberle', '123456');
+INSERT INTO FinancialAssets.user (user_id, email, fist_name, last_name, password) VALUES (2, 'jimmy@johns.com', 'Jimmy', 'John', '456789');

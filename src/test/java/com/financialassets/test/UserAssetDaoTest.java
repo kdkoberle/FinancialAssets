@@ -3,15 +3,17 @@ package com.financialassets.test;
 import com.financialassets.entity.User;
 import com.financialassets.entity.UserAsset;
 import com.financialassets.persistence.DaoFactory;
+import com.financialassets.test.util.Database;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
+
+import java.util.List;
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -19,7 +21,7 @@ class DoaFactoryTest {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     DaoFactory daoFactory;
-
+    Database db;
     /**
      * create a new BookDao before each test
      */
@@ -39,8 +41,8 @@ class DoaFactoryTest {
         List<UserAsset> allUserAssets;
         allUserAssets = daoFactory.getAll();
         assertEquals(3, allUserAssets.size());
-    }
 
+    }
     /**
      *  Test that the get by id works with a known value
      */
