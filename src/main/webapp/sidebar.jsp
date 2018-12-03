@@ -21,10 +21,12 @@
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
             <h6 class="dropdown-header">Login Screens:</h6>
             <a class="dropdown-item" href="login.jsp">Login</a>
+            <a class="dropdown-item" href="add-asset.jsp">Add Asset</a>
+            <a class="dropdown-item" href="view-assets.jsp">Asset Summary</a>
             <a class="dropdown-item" href="register.jsp">Register</a>
             <a class="dropdown-item" href="forgot-password.jsp">Forgot Password</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="add-asset.jsp">Add Asset</a>
+
         </div>
     </li>
     <li class="nav-item">
