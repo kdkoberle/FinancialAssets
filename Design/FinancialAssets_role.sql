@@ -1,0 +1,1 @@
+INSERT INTO FinancialAssets.role (role_id, user_id, email, role) VALUES (1, 1, 'kdkoberle@madisoncollege.edu', 'admin');
