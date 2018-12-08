@@ -21,6 +21,7 @@
             <hr>
 
             <FORM ACTION="add-asset" METHOD="POST">
+
                 <div class="form-group">
                     <div class="form-label-group">
                         <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="required" autofocus="autofocus" name="j_username">
