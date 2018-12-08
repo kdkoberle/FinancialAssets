@@ -17,32 +17,38 @@
 
 
             <!-- Page Content -->
-            <h1>Login</h1>
+            <h1>Add Asset</h1>
             <hr>
-            <p>This is a great starting point for new custom pages.</p>
 
-            <FORM ACTION="j_security_check" METHOD="POST">
+            <FORM ACTION="add-asset" METHOD="POST">
                 <div class="form-group">
                     <div class="form-label-group">
                         <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="required" autofocus="autofocus" name="j_username">
                         <label for="inputEmail">Email address</label>
                     </div>
                 </div>
+                <!-- -->
                 <div class="form-group">
                     <div class="form-label-group">
-                        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="required" name="j_password">
-                        <label for="inputPassword">Password</label>
+                        <input type="qtyBought" id="qtyBought" class="form-control" placeholder="Quantity Bought" required="required" name="qtyBought">
+                        <label for="qtyBought">Quantity Bought</label>
                     </div>
                 </div>
+                <!-- -->
                 <div class="form-group">
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" value="remember-me">
-                            Remember Password
-                        </label>
+                    <div class="form-label-group">
+                        <input type="price" id="price" class="form-control" placeholder="Price Per Unit" required="required" name="price">
+                        <label for="price">Price Per Unit</label>
                     </div>
                 </div>
-                <input type="submit" class="btn btn-primary btn-block" href="testing.jsp" value="Login" />
+                <!-- -->
+                <div class="form-group">
+                    <div class="form-label-group">
+                        <input type="fees" id="fees" class="form-control" placeholder="Fees (shipping, commission, etc)" required="required" name="fees">
+                        <label for="fees">Fees (shipping, commission, etc)</label>
+                    </div>
+                </div>
+                <input type="submit" class="btn btn-primary btn-block" href="testing.jsp" value="Add Asset" />
             </FORM>
         </div>
         <!-- /.container-fluid -->
