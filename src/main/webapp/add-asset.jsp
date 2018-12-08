@@ -21,11 +21,18 @@
             <hr>
 
             <FORM ACTION="add-asset" METHOD="POST">
-
+                <!-- -->
                 <div class="form-group">
                     <div class="form-label-group">
-                        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="required" autofocus="autofocus" name="j_username">
-                        <label for="inputEmail">Email address</label>
+                        <input type="name" id="name" class="form-control" placeholder="Asset Name" required="required" autofocus="autofocus" name="name">
+                        <label for="name">Asset Name</label>
+                    </div>
+                </div>
+                <!-- -->
+                <div class="form-group">
+                    <div class="form-label-group">
+                        <input type="dateBought" id="dateBought" class="form-control" placeholder="Date Bought (12/18/2018)" required="required" autofocus="autofocus" name="dateBought">
+                        <label for="dateBought">Date Bought</label>
                     </div>
                 </div>
                 <!-- -->
