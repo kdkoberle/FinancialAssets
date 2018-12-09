@@ -17,10 +17,10 @@
 
 
             <!-- Page Content -->
-            <h1>Add Asset</h1>
+            <h1>Sold Asset</h1>
             <hr>
 
-            <FORM ACTION="add-asset" METHOD="POST">
+            <FORM ACTION="sold-asset" METHOD="POST">
                 <!-- -->
                 <div class="form-group">
                     <div class="form-label-group">
@@ -38,25 +38,43 @@
                 <!-- -->
                 <div class="form-group">
                     <div class="form-label-group">
+                        <input type="dateSold" id="dateSold" class="form-control" placeholder="Date Sold (12/18/2018)" required="required" name="dateSold">
+                        <label for="dateSold">Date Sold (12/18/2018)</label>
+                    </div>
+                </div>
+                <!-- -->
+                <div class="form-group">
+                    <div class="form-label-group">
+                        <input type="buyPrice" id="buyPrice" class="form-control" placeholder="Price Per Unit" required="required" name="buyPrice">
+                        <label for="buyPrice">Bought at Price Per Unit</label>
+                    </div>
+                </div>
+                <!-- -->
+                <div class="form-group">
+                    <div class="form-label-group">
+                        <input type="sellPrice" id="sellPrice" class="form-control" placeholder="Sold Price Per Unit" required="required" name="sellPrice">
+                        <label for="sellPrice">Sold Price Per Unit</label>
+                    </div>
+                </div>
+
+                <!-- -->
+                <div class="form-group">
+                    <div class="form-label-group">
                         <input type="qtyBought" id="qtyBought" class="form-control" placeholder="Quantity Bought" required="required" name="qtyBought">
                         <label for="qtyBought">Quantity Bought</label>
                     </div>
                 </div>
+
                 <!-- -->
                 <div class="form-group">
                     <div class="form-label-group">
-                        <input type="price" id="price" class="form-control" placeholder="Price Per Unit" required="required" name="price">
-                        <label for="price">Price Per Unit</label>
+                        <input type="qtySold" id="qtySold" class="form-control" placeholder="Quantity Sold" required="required" name="qtySold">
+                        <label for="qtySold">Quantity Sold</label>
                     </div>
                 </div>
-                <!-- -->
-                <div class="form-group">
-                    <div class="form-label-group">
-                        <input type="fees" id="fees" class="form-control" placeholder="Fees (shipping, commission, etc)" required="required" name="fees">
-                        <label for="fees">Fees $USD (shipping, commission, etc)</label>
-                    </div>
-                </div>
-                <input type="submit" class="btn btn-primary btn-block" href="testing.jsp" value="Add Asset" />
+
+
+                <input type="submit" class="btn btn-primary btn-block" href="testing.jsp" value="Sold Asset" />
             </FORM>
         </div>
         <!-- /.container-fluid -->
