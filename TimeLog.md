@@ -26,3 +26,4 @@
 | 10/31 | working on getting webserver to work | 2 | no dice |
 | 10/24 - 11/4 | trying to get alternate web hosting services to work | ~5 | no dice, cutting losses |
 | 12/1 | IEXAPI and Index Ticker | 3 | Mostly only meshing with specific user info left |
+| 12/5 |  Working on jsps | 2 | mostly done with jsps |
