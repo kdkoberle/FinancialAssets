@@ -7,9 +7,9 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class IEXClientTest {
-    IEXClient client = new IEXClient();
-    List<IEXResponse> stockData = new ArrayList<>();
+class IEXChartClientTest {
+    IEXChartClient client = new IEXChartClient();
+    List<IEXChartResponse> stockData = new ArrayList<>();
 
     @Test
     void getJSONResults() {

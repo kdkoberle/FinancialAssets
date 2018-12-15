@@ -10,7 +10,7 @@ import javax.ws.rs.core.MediaType;
 import java.util.ArrayList;
 import java.util.List;
 
-public class IEXClient {
+public class IEXChartClient {
 
     /**
      * This method produces JSON results.
@@ -19,8 +19,8 @@ public class IEXClient {
      * @return results The list of the apartment search results.
      * @throws Exception The generic exception.
      */
-    public List<IEXResponse> getJSONResults(String symbol, String range) throws Exception {
-        List<IEXResponse> results = new ArrayList<>();
+    public List<IEXChartResponse> getJSONResults(String symbol, String range) throws Exception {
+        List<IEXChartResponse> results = new ArrayList<>();
 
         String targetUrl = "https://api.iextrading.com/1.0/stock/" + symbol + "/chart/" + range;
 
@@ -31,13 +31,13 @@ public class IEXClient {
             return results;
 
         ObjectMapper mapper = new ObjectMapper();
-        results = mapper.readValue(response, new TypeReference<List<IEXResponse>>() {
+        results = mapper.readValue(response, new TypeReference<List<IEXChartResponse>>() {
         });
 
         return results;
     }
 
-    private String getResponse(String mediaType, String targetUrl, List<IEXResponse> stockChart) {
+    private String getResponse(String mediaType, String targetUrl, List<IEXChartResponse> stockChart) {
 
         Client client = ClientBuilder.newClient();
         WebTarget target = client.target(targetUrl);
@@ -48,7 +48,7 @@ public class IEXClient {
 
         } catch (Exception exception) {
 
-            IEXResponse stockHistory = new IEXResponse();
+            IEXChartResponse stockHistory = new IEXChartResponse();
             stockChart.add(stockHistory);
         }
 

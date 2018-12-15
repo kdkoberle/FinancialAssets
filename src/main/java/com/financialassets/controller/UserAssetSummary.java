@@ -1,7 +1,7 @@
 package com.financialassets.controller;
 
-import com.financialassets.apiclient.IEXClient;
-import com.financialassets.apiclient.IEXResponse;
+import com.financialassets.apiclient.IEXChartClient;
+import com.financialassets.apiclient.IEXChartResponse;
 import com.financialassets.entity.UserAsset;
 import com.financialassets.persistence.DaoFactory;
 
@@ -26,8 +26,8 @@ public class UserAssetSummary extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        IEXClient client = new IEXClient();
-        List<IEXResponse> stockData = new ArrayList<>();
+        IEXChartClient client = new IEXChartClient();
+        List<IEXChartResponse> stockData = new ArrayList<>();
 
         //TODO finish error handling
 
@@ -37,9 +37,10 @@ public class UserAssetSummary extends HttpServlet {
 
         }
 
-        UserAsset userAsset = new UserAsset();
+        List<UserAsset> userAssets;
         DaoFactory assetsDao = new DaoFactory(UserAsset.class);
-        req.setAttribute("userAssets", assetsDao.getAll());
+        userAssets = assetsDao.getAll();
+        req.setAttribute("userAssets", userAssets);
         //req.setAttribute("stockData", stockData);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/view-assets.jsp");

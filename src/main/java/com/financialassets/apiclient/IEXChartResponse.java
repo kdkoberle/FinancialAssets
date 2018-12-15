@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.annotation.Generated;
 
 @Generated("com.robohorse.robopojogenerator")
-public class IEXResponse {
+public class IEXChartResponse {
 
     @JsonProperty("date")
     private String date;
