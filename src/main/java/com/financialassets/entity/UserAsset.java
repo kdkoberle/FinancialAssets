@@ -31,7 +31,7 @@ public class UserAsset {
 
     @Column(name = "sell_date")
     private LocalDate sellDate;
-    private int qty;
+    private Integer qty;
 
     @Column(name = "asset_name")
     private String assetName;

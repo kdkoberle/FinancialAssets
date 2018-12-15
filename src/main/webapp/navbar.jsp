@@ -40,14 +40,6 @@
                 {
                     "description": "Copper",
                     "proName": "OANDA:XCUUSD"
-                },
-                {
-                    "description": "USD",
-                    "proName": "TVC:DXY"
-                },
-                {
-                    "description": "Shanghai Composite",
-                    "proName": "TVC:SHCOMP"
                 }
             ],
                 "locale": "en"

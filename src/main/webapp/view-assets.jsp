@@ -125,24 +125,7 @@
                             </tbody>
                         </table>
 
-                        <table class="table table-bordered" id="stockTable" width="100%" cellspacing="0">
-                            <thead>
-                            <tr>
-                                <th>Date</th>
-                                <th>Open</th>
-                                <th>Close</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <c:forEach var="data" items="${stockData}">
-                                <tr>
-                                    <td>${data.date}</td>
-                                    <td>${data.open}</td>
-                                    <td>${data.close}</td>
-                                </tr>
-                            </c:forEach>
-                            </tbody>
-                        </table>
+
 
                     </div>
                 </div>

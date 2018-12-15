@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(
-        urlPatterns = {"/view-assets.jsp"}
+        urlPatterns = {"/testing.jsp"}
 )
 
 
@@ -30,17 +30,18 @@ public class UserAssetSummary extends HttpServlet {
         List<IEXResponse> stockData = new ArrayList<>();
 
         //TODO finish error handling
+        /*
         try {
             stockData = client.getJSONResults("tsla", "5y");
         } catch (Exception e){
 
-        }
+        }*/
 
 
-        //UserAsset userAsset = new UserAsset();
-        //DaoFactory assetsDao = new DaoFactory(UserAsset.class);
-        //req.setAttribute("userAssets", assetsDao.getAll());
-        req.setAttribute("stockData", stockData);
+        UserAsset userAsset = new UserAsset();
+        DaoFactory assetsDao = new DaoFactory(UserAsset.class);
+        req.setAttribute("userAssets", assetsDao.getAll());
+        //req.setAttribute("stockData", stockData);
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/view-assets.jsp");
         dispatcher.forward(req, resp);

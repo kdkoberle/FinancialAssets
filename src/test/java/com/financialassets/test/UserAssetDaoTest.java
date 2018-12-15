@@ -17,18 +17,18 @@ import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class DoaFactoryTest {
+class UserAssetDoaFactoryTest {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     DaoFactory daoFactory;
     Database db;
     /**
-     * create a new BookDao before each test
+     * create a new DaoFactory for UserAsset before each test
      */
     @BeforeEach
     void setUp() {
         com.financialassets.test.util.Database database = com.financialassets.test.util.Database.getInstance();
-        database.runSQL("cleandb.sql");
+        //database.runSQL("cleandb.sql");
 
         daoFactory = new DaoFactory(UserAsset.class);
     }
@@ -40,7 +40,7 @@ class DoaFactoryTest {
     void testGetAll() {
         List<UserAsset> allUserAssets;
         allUserAssets = daoFactory.getAll();
-        assertEquals(3, allUserAssets.size());
+        assertEquals(4, allUserAssets.size());
 
     }
     /**
@@ -48,9 +48,9 @@ class DoaFactoryTest {
      */
     @Test
     void testGetById() {
-        UserAsset userAsset = (UserAsset)daoFactory.getById(2);
+        UserAsset userAsset = (UserAsset)daoFactory.getById(7);
         assertNotNull(userAsset);
-        assertEquals("gold", userAsset.getAssetName());
+        assertEquals("Gold", userAsset.getAssetName());
     }
 
 
