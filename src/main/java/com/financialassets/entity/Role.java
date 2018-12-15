@@ -27,10 +27,6 @@ public class Role {
 
     private int userId;
 
-
-
-
-
     private String role;
 
 

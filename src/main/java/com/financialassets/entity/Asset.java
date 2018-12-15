@@ -7,6 +7,8 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.ejb.Local;
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * The type Asset.
@@ -32,6 +34,8 @@ public class Asset {
     private BigDecimal currentPrice;
 
     @OneToMany(mappedBy = "asset", fetch = FetchType.LAZY)
+    //private Set<UserAsset> userAssets = new HashSet<>();
+
 
 
     /**
