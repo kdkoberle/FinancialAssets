@@ -17,7 +17,7 @@
   </login-config>
 
   <!-- TODO get pages fleshed out for authentication -->
-  <!-- <security-constraint>
+  <security-constraint>
 
      <web-resource-collection>
        <web-resource-name>testing</web-resource-name>
@@ -28,7 +28,7 @@
        <role-name>registered-user</role-name>
        <role-name>admin</role-name>
      </auth-constraint>
-  </security-constraint>-->
+  </security-constraint>
 
   <security-role>
     <role-name>registered-user</role-name>

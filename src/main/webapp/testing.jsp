@@ -116,6 +116,38 @@
     </div>
     <button type="submit" name="submit" value="search" class="btn btn-primary">Show All</button>
 </form>
+<table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+    <thead>
+    <tr>
+        <th>Asset</th>
+        <th>Buy Price</th>
+        <th>Sell Price</th>
+        <th>Quantity</th>
+        <th>Buy Date</th>
+        <th>Sell Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    <c:forEach var="userAsset" items="${userAssets}">
+        <tr>
+            <td>${userAsset.assetName}</td>
+            <td>${userAsset.buyPrice}</td>
+            <td>${userAsset.sellPrice}</td>
+            <td>${userAsset.qty}</td>
+            <td>${userAsset.buyDate}</td>
+            <td>${userAsset.sellDate}</td>
+        </tr>
+    </c:forEach>
+    <tr>
+        <td>name processed</td>
+        <td>price processed</td>
+        <td>sell processed</td>
+        <td>qty processed</td>
+        <td>bdate processed</td>
+        <td>sdate processed</td>
+    </tr>
+    </tbody>
+</table>
     <!-- /.content-wrapper -->
 
 </div>

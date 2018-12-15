@@ -122,6 +122,14 @@
                                 <td>${userAsset.sellDate}</td>
                             </tr>
                             </c:forEach>
+                            <tr>
+                                <td>name processed</td>
+                                <td>price processed</td>
+                                <td>sell processed</td>
+                                <td>qty processed</td>
+                                <td>bdate processed</td>
+                                <td>sdate processed</td>
+                            </tr>
                             </tbody>
                         </table>
 
