@@ -30,13 +30,12 @@ public class UserAssetSummary extends HttpServlet {
         List<IEXResponse> stockData = new ArrayList<>();
 
         //TODO finish error handling
-        /*
+
         try {
             stockData = client.getJSONResults("tsla", "5y");
         } catch (Exception e){
 
-        }*/
-
+        }
 
         UserAsset userAsset = new UserAsset();
         DaoFactory assetsDao = new DaoFactory(UserAsset.class);
