@@ -7,39 +7,34 @@ import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
-import java.util.ArrayList;
-import java.util.List;
 
-public class IEXChartClient {
+public class IEXQuoteClient {
 
     private String baseUrl = "https://api.iextrading.com/1.0/stock/";
 
 
     /**
-     * This method produces JSON results for chart history.
+     * This method produces JSON results for stock quote.
      * @param symbol The stock symbol
-     * @param range The range to get
      * @return results The list of the apartment search results.
      * @throws Exception The generic exception.
      */
-    public List<IEXChartResponse> getJSONResults(String symbol, String range) throws Exception {
+    public IEXQuoteResponse getJSONResults(String symbol) throws Exception {
 
-        List<IEXChartResponse> results = new ArrayList<>();
+        IEXQuoteResponse result = new IEXQuoteResponse();
 
-        String targetUrl = baseUrl + symbol + "/chart/" + range;
+        String targetUrl = baseUrl + symbol + "/quote";
 
 
-        String response = getResponse(MediaType.APPLICATION_JSON, targetUrl, results);
-
+        String response = getResponse(MediaType.APPLICATION_JSON, targetUrl);
 
         ObjectMapper mapper = new ObjectMapper();
-        results = mapper.readValue(response, new TypeReference<List<IEXChartResponse>>() {
-        });
+        result = mapper.readValue(response, IEXQuoteResponse.class);
 
-        return results;
+        return result;
     }
 
-    private String getResponse(String mediaType, String targetUrl, List<IEXChartResponse> stockChart) {
+    private String getResponse(String mediaType, String targetUrl) {
 
         Client client = ClientBuilder.newClient();
         WebTarget target = client.target(targetUrl);
@@ -50,15 +45,9 @@ public class IEXChartClient {
 
         } catch (Exception exception) {
 
-            IEXChartResponse stockHistory = new IEXChartResponse();
-            stockChart.add(stockHistory);
+            IEXQuoteResponse stockHistory = new IEXQuoteResponse();
         }
 
         return response;
     }
-
-
-
-
 }
-
