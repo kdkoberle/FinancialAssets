@@ -21,7 +21,7 @@ public class IEXQuoteClient {
      */
     public IEXQuoteResponse getJSONResults(String symbol) throws Exception {
 
-        IEXQuoteResponse result = new IEXQuoteResponse();
+        IEXQuoteResponse result;
 
         String targetUrl = baseUrl + symbol + "/quote";
 
@@ -45,7 +45,8 @@ public class IEXQuoteClient {
 
         } catch (Exception exception) {
 
-            IEXQuoteResponse stockHistory = new IEXQuoteResponse();
+        } finally {
+            client.close();
         }
 
         return response;

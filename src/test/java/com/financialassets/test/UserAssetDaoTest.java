@@ -40,7 +40,7 @@ class UserAssetDoaFactoryTest {
     void testGetAll() {
         List<UserAsset> allUserAssets;
         allUserAssets = daoFactory.getAll();
-        assertEquals(4, allUserAssets.size());
+        assertEquals(5, allUserAssets.size());
 
     }
     /**

@@ -1,6 +1,8 @@
 package com.financialassets.entity;
 
 
+import com.financialassets.apiclient.IEXQuoteClient;
+import com.financialassets.apiclient.IEXQuoteResponse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.annotations.GenericGenerator;
@@ -44,6 +46,40 @@ public class UserAsset {
     @Column(name = "asset_id")
     private int assetId;
 
+    @Transient
+    private double gainOrLossDollar;
+    @Transient
+    private double gainOrLossPercent;
+
+    public void setQty(Integer qty) {
+        this.qty = qty;
+    }
+
+    @Transient
+    IEXQuoteResponse quoteResponse;
+    @Transient
+    IEXQuoteClient quoteClient;
+
+    public double getGainOrLossDollar() {
+        return gainOrLossDollar;
+    }
+
+    public void setGainOrLossDollar(double gainOrLossDollar) {
+        String name = this.assetName;
+
+
+        this.gainOrLossDollar = gainOrLossDollar;
+    }
+
+    public double getGainOrLossPercent() {
+        return gainOrLossPercent;
+    }
+
+    public void setGainOrLossPercent(double gainOrLossPercent) {
+        String name = this.assetName;
+
+        this.gainOrLossPercent = gainOrLossPercent;
+    }
 
     /**
      * Gets user asset id.
@@ -212,7 +248,24 @@ public class UserAsset {
      * @param qty       the qty
      * @param assetName the asset name
      */
-    public UserAsset(User user, BigDecimal buyPrice, LocalDate buyDate, int qty, String assetName) {
+    public UserAsset(User user, BigDecimal buyPrice, LocalDate buyDate, Integer qty, String assetName) {
+        this.buyPrice = buyPrice;
+        this.buyDate = buyDate;
+        this.qty = qty;
+        this.assetName = assetName;
+        this.user = user;
+    }
+
+
+    /**
+     * Instantiates a new User asset.
+     *
+     * @param buyPrice  the buy price
+     * @param buyDate   the buy date
+     * @param qty       the qty
+     * @param assetName the asset name
+     */
+    public UserAsset(User user, BigDecimal buyPrice, LocalDate buyDate, Integer qty, String assetName, double gainOrLossDollar) {
         this.buyPrice = buyPrice;
         this.buyDate = buyDate;
         this.qty = qty;

@@ -8,6 +8,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class IEXChartClientTest {
+    //TODO finish catch block
     IEXChartClient client = new IEXChartClient();
     List<IEXChartResponse> stockData = new ArrayList<>();
 

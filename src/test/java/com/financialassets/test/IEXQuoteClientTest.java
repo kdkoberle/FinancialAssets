@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class IEXQuoteClientTest {
-
+    //TODO finish catch block
     IEXQuoteClient quoteClient = new IEXQuoteClient();
     IEXQuoteResponse quoteResponse = new IEXQuoteResponse();
 

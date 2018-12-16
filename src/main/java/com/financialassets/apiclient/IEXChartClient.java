@@ -52,6 +52,8 @@ public class IEXChartClient {
 
             IEXChartResponse stockHistory = new IEXChartResponse();
             stockChart.add(stockHistory);
+        } finally {
+            client.close();
         }
 
         return response;
