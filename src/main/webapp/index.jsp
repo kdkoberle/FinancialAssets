@@ -49,6 +49,8 @@
         </div>
     </div>
 </div>
+<!-- Sticky Footer -->
+<%@include file="footer.jsp"%>
 
 <!-- Bootstrap core JavaScript-->
 <script src="vendor/jquery/jquery.min.js"></script>
