@@ -74,11 +74,7 @@ public class LoginServlet extends HttpServlet {
 
         //set gain or loss
         for (UserAsset asset : userAssets) {
-            if(asset.getSellPrice() == null) {
-                asset.setUnsoldGainOrLoss(asset.getAssetName());
-            } else {
-
-            }
+            asset.setUnsoldGainOrLoss(asset.getAssetName());
         }
 
         return userAssets;

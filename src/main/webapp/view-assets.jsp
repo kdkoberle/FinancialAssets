@@ -28,10 +28,12 @@
                                 <th>Asset</th>
                                 <th>Buy Price</th>
                                 <th>Sell Price</th>
-                                <th>(Un)Realized Gain/Loss</th>
                                 <th>Quantity</th>
                                 <th>Buy Date</th>
                                 <th>Sell Date</th>
+                                <th>Fees</th>
+                                <th>(Un)Realized Gain/Loss $</th>
+                                <th>(Un)Realized Gain/Loss %</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -40,10 +42,12 @@
                                 <td>${userAsset.assetName}</td>
                                 <td>$ ${userAsset.buyPrice}</td>
                                 <td>${userAsset.sellPrice}</td>
-                                <td>$ ${userAsset.gainOrLossDollar}</td>
                                 <td>${userAsset.qty}</td>
                                 <td>${userAsset.buyDate}</td>
                                 <td>${userAsset.sellDate}</td>
+                                <td>$ ${userAsset.fees}</td>
+                                <td>$ ${userAsset.gainOrLossDollar}</td>
+                                <td>${userAsset.gainOrLossPercent} %</td>
                             </tr>
                             </c:forEach>
                             </tbody>

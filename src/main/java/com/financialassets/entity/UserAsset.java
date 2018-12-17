@@ -9,6 +9,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 
 @Entity(name = "UserAsset")
@@ -38,6 +39,10 @@ public class UserAsset {
 
     @Column(name = "asset_name")
     private String assetName;
+
+    private double fees;
+
+
 
     @ManyToOne
     @JoinColumn(name = "user_id",
@@ -73,18 +78,45 @@ public class UserAsset {
     //TODO figure in commisions, fees
     public void setUnsoldGainOrLoss(String name) {
         IEXQuoteClient quoteClient = new IEXQuoteClient();
-        try {
-            IEXQuoteResponse quote = quoteClient.getJSONResults(this.assetName);
+        DecimalFormat dollarFormat = new DecimalFormat("#.####");
+        DecimalFormat percentFormat = new DecimalFormat("#.##");
+        double longDollar;
+        double longPercent;
 
-            this.gainOrLossDollar = quote.getLatestPrice() - buyPrice;
-            this.gainOrLossPercent = gainOrLossDollar / buyPrice;
+        // If unsold
+        if (sellPrice == null) {
+            try {
+                IEXQuoteResponse quote = quoteClient.getJSONResults(this.assetName);
+                longDollar = (quote.getLatestPrice() - buyPrice - fees)  * qty;
+                longPercent = (longDollar / (buyPrice * qty)) * 100;
 
-        } catch (Exception e) {
-            logger.error(e);
+                this.gainOrLossDollar = Double.parseDouble(dollarFormat.format(longDollar));
+                this.gainOrLossPercent = Double.parseDouble(percentFormat.format(longPercent));
+
+            } catch (Exception e) {
+                logger.error(e);
+            }
+
+        // If sold
+        } else {
+            longDollar = (sellPrice.doubleValue() - buyPrice - fees)  * qty;
+            longPercent = (longDollar / (buyPrice * qty)) * 100;
+
+            this.gainOrLossDollar = Double.parseDouble(dollarFormat.format(longDollar));
+            this.gainOrLossPercent = Double.parseDouble(percentFormat.format(longPercent));
         }
+
 
     }
 
+
+    public double getFees() {
+        return fees;
+    }
+
+    public void setFees(double fees) {
+        this.fees = fees;
+    }
 
     /**
      * Gets user asset id.

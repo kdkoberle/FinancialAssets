@@ -1271,33 +1271,39 @@
     <column id="310" parent="280" name="asset_id">
       <Position>8</Position>
       <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="311" parent="280" name="qty">
       <Position>9</Position>
       <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="312" parent="280" name="user_asset_user_asset_id_uindex">
+    <column id="312" parent="280" name="fees">
+      <Position>10</Position>
+      <DataType>double(13,2 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="313" parent="280" name="user_asset_user_asset_id_uindex">
       <ColNames>user_asset_id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="313" parent="280" name="user_asset_user_id_fk">
+    <index id="314" parent="280" name="user_asset_user_id_fk">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="314" parent="280" name="PRIMARY">
+    <key id="315" parent="280" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>user_asset_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="315" parent="280" name="user_asset_user_asset_id_uindex">
+    <key id="316" parent="280" name="user_asset_user_asset_id_uindex">
       <ColNames>user_asset_id</ColNames>
       <UnderlyingIndexName>user_asset_user_asset_id_uindex</UnderlyingIndexName>
     </key>
-    <foreign-key id="316" parent="280" name="user_asset_user_id_fk">
+    <foreign-key id="317" parent="280" name="user_asset_user_id_fk">
       <ColNames>user_id</ColNames>
       <RefSchemaName>FinancialAssets</RefSchemaName>
       <RefTableName>user</RefTableName>
