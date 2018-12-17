@@ -54,19 +54,21 @@ public class UserAsset {
     public void setQty(Integer qty) {
         this.qty = qty;
     }
+    @Transient
+    private IEXQuoteResponse quoteResponse;
 
-    @Transient
-    IEXQuoteResponse quoteResponse;
-    @Transient
-    IEXQuoteClient quoteClient;
+
+    private IEXQuoteResponse getStockQuote(String name) {
+
+
+        return this.quoteResponse;
+    }
 
     public double getGainOrLossDollar() {
         return gainOrLossDollar;
     }
 
     public void setGainOrLossDollar(double gainOrLossDollar) {
-        String name = this.assetName;
-
 
         this.gainOrLossDollar = gainOrLossDollar;
     }
@@ -254,24 +256,12 @@ public class UserAsset {
         this.qty = qty;
         this.assetName = assetName;
         this.user = user;
+
+
     }
 
 
-    /**
-     * Instantiates a new User asset.
-     *
-     * @param buyPrice  the buy price
-     * @param buyDate   the buy date
-     * @param qty       the qty
-     * @param assetName the asset name
-     */
-    public UserAsset(User user, BigDecimal buyPrice, LocalDate buyDate, Integer qty, String assetName, double gainOrLossDollar) {
-        this.buyPrice = buyPrice;
-        this.buyDate = buyDate;
-        this.qty = qty;
-        this.assetName = assetName;
-        this.user = user;
-    }
+
 
 
 

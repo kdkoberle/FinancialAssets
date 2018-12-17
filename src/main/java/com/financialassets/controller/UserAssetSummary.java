@@ -45,6 +45,7 @@ public class UserAssetSummary extends HttpServlet {
 
         RequestDispatcher dispatcher = req.getRequestDispatcher("/view-assets.jsp");
         dispatcher.forward(req, resp);
+        resp.sendRedirect("/view-assets.jsp");
 
 
     }

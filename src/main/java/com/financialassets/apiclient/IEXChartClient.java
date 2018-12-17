@@ -45,6 +45,7 @@ public class IEXChartClient {
         WebTarget target = client.target(targetUrl);
         String response = "";
 
+        //TODO finsih off
         try {
             response = target.request(mediaType).get(String.class);
 
@@ -58,6 +59,7 @@ public class IEXChartClient {
 
         return response;
     }
+
 
 
 

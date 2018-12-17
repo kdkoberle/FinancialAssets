@@ -50,7 +50,7 @@ class UserAssetDoaFactoryTest {
     void testGetById() {
         UserAsset userAsset = (UserAsset)daoFactory.getById(7);
         assertNotNull(userAsset);
-        assertEquals("Gold", userAsset.getAssetName());
+        assertEquals("AU", userAsset.getAssetName());
     }
 
 

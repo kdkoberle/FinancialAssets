@@ -1,6 +1,5 @@
 package com.financialassets.apiclient;
 
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import javax.ws.rs.client.Client;
@@ -39,7 +38,7 @@ public class IEXQuoteClient {
         Client client = ClientBuilder.newClient();
         WebTarget target = client.target(targetUrl);
         String response = "";
-
+        //TODO finish exception
         try {
             response = target.request(mediaType).get(String.class);
 
@@ -51,4 +50,5 @@ public class IEXQuoteClient {
 
         return response;
     }
+
 }
