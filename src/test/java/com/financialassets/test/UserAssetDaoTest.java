@@ -84,7 +84,7 @@ class UserAssetDoaFactoryTest {
         User user = new User();
         user = (User)userDaoFactory.getById(1);
         assertEquals("Keith", user.getFirstName());
-        BigDecimal buyPrice = new BigDecimal(14.50);
+        double buyPrice = 14.50;
         UserAsset newUAsset = new UserAsset(user, buyPrice, LocalDate.now(), 50, "Silver");
         newUAsset.setAssetId(2);
         daoFactory.insert(newUAsset);

@@ -2,6 +2,8 @@ package com.financialassets.apiclient;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -13,6 +15,7 @@ import java.util.List;
 public class IEXChartClient {
 
     private String baseUrl = "https://api.iextrading.com/1.0/stock/";
+    private final Logger logger = LogManager.getLogger(this.getClass());
 
 
     /**
@@ -45,11 +48,11 @@ public class IEXChartClient {
         WebTarget target = client.target(targetUrl);
         String response = "";
 
-        //TODO finsih off
         try {
             response = target.request(mediaType).get(String.class);
 
         } catch (Exception exception) {
+            logger.error(exception);
 
             IEXChartResponse stockHistory = new IEXChartResponse();
             stockChart.add(stockHistory);

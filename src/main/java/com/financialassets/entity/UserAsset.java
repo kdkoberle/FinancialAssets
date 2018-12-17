@@ -14,7 +14,8 @@ import java.time.LocalDate;
 @Entity(name = "UserAsset")
 @Table(name = "user_asset")
 public class UserAsset {
-
+    @Transient
+    private final Logger logger = LogManager.getLogger(this.getClass());
 
     @Column(name = "user_asset_id")
     @Id
@@ -23,7 +24,7 @@ public class UserAsset {
     private int userAssetId;
 
     @Column(name = "buy_price")
-    private BigDecimal buyPrice;
+    private double buyPrice;
 
     @Column(name = "sell_price")
     private BigDecimal sellPrice;
@@ -54,34 +55,36 @@ public class UserAsset {
     public void setQty(Integer qty) {
         this.qty = qty;
     }
-    @Transient
-    private IEXQuoteResponse quoteResponse;
 
-
-    private IEXQuoteResponse getStockQuote(String name) {
-
-
-        return this.quoteResponse;
+    public Integer getQty() {
+        return qty;
     }
+
+
 
     public double getGainOrLossDollar() {
         return gainOrLossDollar;
-    }
-
-    public void setGainOrLossDollar(double gainOrLossDollar) {
-
-        this.gainOrLossDollar = gainOrLossDollar;
     }
 
     public double getGainOrLossPercent() {
         return gainOrLossPercent;
     }
 
-    public void setGainOrLossPercent(double gainOrLossPercent) {
-        String name = this.assetName;
+    //TODO figure in commisions, fees
+    public void setUnsoldGainOrLoss(String name) {
+        IEXQuoteClient quoteClient = new IEXQuoteClient();
+        try {
+            IEXQuoteResponse quote = quoteClient.getJSONResults(this.assetName);
 
-        this.gainOrLossPercent = gainOrLossPercent;
+            this.gainOrLossDollar = quote.getLatestPrice() - buyPrice;
+            this.gainOrLossPercent = gainOrLossDollar / buyPrice;
+
+        } catch (Exception e) {
+            logger.error(e);
+        }
+
     }
+
 
     /**
      * Gets user asset id.
@@ -107,7 +110,7 @@ public class UserAsset {
      *
      * @return the buy price
      */
-    public BigDecimal getBuyPrice() {
+    public double getBuyPrice() {
         return buyPrice;
     }
 
@@ -116,7 +119,7 @@ public class UserAsset {
      *
      * @param buyPrice the buy price
      */
-    public void setBuyPrice(BigDecimal buyPrice) {
+    public void setBuyPrice(double buyPrice) {
         this.buyPrice = buyPrice;
     }
 
@@ -174,23 +177,6 @@ public class UserAsset {
         this.sellDate = sellDate;
     }
 
-    /**
-     * Gets qty.
-     *
-     * @return the qty
-     */
-    public int getQty() {
-        return qty;
-    }
-
-    /**
-     * Sets qty.
-     *
-     * @param qty the qty
-     */
-    public void setQty(int qty) {
-        this.qty = qty;
-    }
 
     /**
      * Gets asset name.
@@ -250,7 +236,7 @@ public class UserAsset {
      * @param qty       the qty
      * @param assetName the asset name
      */
-    public UserAsset(User user, BigDecimal buyPrice, LocalDate buyDate, Integer qty, String assetName) {
+    public UserAsset(User user, double buyPrice, LocalDate buyDate, Integer qty, String assetName) {
         this.buyPrice = buyPrice;
         this.buyDate = buyDate;
         this.qty = qty;

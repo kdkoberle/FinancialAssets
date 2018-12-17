@@ -64,6 +64,12 @@
         <a class="nav-link" href="login.jsp">
             <span>Login</span></a>
     </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="register.jsp">
+            <span>Register</span></a>
+    </li>
+
 </ul>
 
 <% } %>

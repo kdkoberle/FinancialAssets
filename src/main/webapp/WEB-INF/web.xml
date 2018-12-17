@@ -16,18 +16,48 @@
     </form-login-config>
   </login-config>
 
-  <!-- TODO get pages fleshed out for authentication -->
   <security-constraint>
-
-     <web-resource-collection>
-       <web-resource-name>testing</web-resource-name>
-       <url-pattern>/testing.jsp</url-pattern>
+    <web-resource-collection>
+       <web-resource-name>view-assets</web-resource-name>
+       <url-pattern>/view-assets.jsp</url-pattern>
      </web-resource-collection>
-
      <auth-constraint>
        <role-name>registered-user</role-name>
        <role-name>admin</role-name>
      </auth-constraint>
+  </security-constraint>
+
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>edit-asset</web-resource-name>
+      <url-pattern>/edit-asset.jsp</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>registered-user</role-name>
+      <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>sold-asset</web-resource-name>
+      <url-pattern>/sold-asset.jsp</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>registered-user</role-name>
+      <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>remove-asset</web-resource-name>
+      <url-pattern>/remove-asset.jsp</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>registered-user</role-name>
+      <role-name>admin</role-name>
+    </auth-constraint>
   </security-constraint>
 
   <security-role>
@@ -36,6 +66,7 @@
   <security-role>
     <role-name>admin</role-name>
   </security-role>
+
 
 
 </web-app>

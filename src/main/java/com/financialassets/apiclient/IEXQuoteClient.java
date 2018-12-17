@@ -1,6 +1,8 @@
 package com.financialassets.apiclient;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -8,7 +10,7 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 
 public class IEXQuoteClient {
-
+    private final Logger logger = LogManager.getLogger(this.getClass());
     private String baseUrl = "https://api.iextrading.com/1.0/stock/";
 
 
@@ -38,12 +40,12 @@ public class IEXQuoteClient {
         Client client = ClientBuilder.newClient();
         WebTarget target = client.target(targetUrl);
         String response = "";
-        //TODO finish exception
+
         try {
             response = target.request(mediaType).get(String.class);
 
         } catch (Exception exception) {
-
+            logger.error(exception);
         } finally {
             client.close();
         }
