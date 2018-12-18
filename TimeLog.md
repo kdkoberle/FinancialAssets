@@ -32,3 +32,5 @@
 | 12/16 | Much progress with servlets, responsive site based on user, implementing iex api meaningfully, calculations for gain loss, more jsps, removed test jsp | 4.5 |
 | 12/17 | Adding assets, registering users servlets and jsps | 6 | need validation still |
 | 12/18 | Streamlining, logged in user assets only | 2| |
+| 12/18 | Delete servlets redirects | 1.5 | |
+
