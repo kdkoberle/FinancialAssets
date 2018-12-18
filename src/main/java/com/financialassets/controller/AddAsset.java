@@ -18,7 +18,6 @@ import java.util.List;
         name="AddAsset", urlPatterns = "/AddAsset"
 )
 
-//todo validation error handling
 public class AddAsset extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -61,7 +60,6 @@ public class AddAsset extends HttpServlet {
         RequestDispatcher dispatcher = request.getRequestDispatcher("/add-success.jsp");
 
         dispatcher.forward(request, response);
-
 
     }
 

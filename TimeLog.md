@@ -33,4 +33,5 @@
 | 12/17 | Adding assets, registering users servlets and jsps | 6 | need validation still |
 | 12/18 | Streamlining, logged in user assets only | 2| |
 | 12/18 | Delete servlets redirects | 1.5 | |
+| 12/18 | SoldAsset servlet, pages, more validation | 1.5 | not done |
 

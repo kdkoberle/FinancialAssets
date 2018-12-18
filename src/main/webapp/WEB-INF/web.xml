@@ -42,17 +42,6 @@
 
   <security-constraint>
     <web-resource-collection>
-      <web-resource-name>EditAsset</web-resource-name>
-      <url-pattern>/edit-asset.jsp</url-pattern>
-    </web-resource-collection>
-    <auth-constraint>
-      <role-name>registered-user</role-name>
-      <role-name>admin</role-name>
-    </auth-constraint>
-  </security-constraint>
-
-  <security-constraint>
-    <web-resource-collection>
       <web-resource-name>DeleteAsset</web-resource-name>
       <url-pattern>/delete-asset.jsp</url-pattern>
     </web-resource-collection>

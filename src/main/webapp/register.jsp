@@ -1,6 +1,35 @@
 <%@include file="head.jsp"%>
-
+<script type="application/javascript">
+$(document).ready(function() {
+$('#identicalForm').bootstrapValidator({
+feedbackIcons: {
+valid: 'glyphicon glyphicon-ok',
+invalid: 'glyphicon glyphicon-remove',
+validating: 'glyphicon glyphicon-refresh'
+},
+fields: {
+password: {
+validators: {
+identical: {
+field: 'confirmPassword',
+message: 'The password and its confirm are not the same'
+}
+}
+},
+confirmPassword: {
+validators: {
+identical: {
+field: 'password',
+message: 'The password and its confirm are not the same'
+}
+}
+}
+}
+});
+});
+</script>
   <body class="bg-dark">
+
 
     <div class="container">
       <div class="card card-register mx-auto mt-5">
@@ -33,13 +62,19 @@
               <div class="form-row">
                 <div class="col-md-6">
                   <div class="form-label-group">
-                    <input type="password" id="password" class="form-control" placeholder="Password" required="required" name="password">
+                    <input type="password" id="password" class="form-control" placeholder="Password" required="required" name="password"
+                           data-bv-identical="true"
+                           data-bv-identical-field="confirmPassword"
+                           data-bv-identical-message="The password and its confirm are not the same" />
                     <label for="password">Password</label>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-label-group">
-                    <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm password" required="required" name="confirmPassword">
+                    <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm password" required="required" name="confirmPassword"
+                           data-bv-identical="true"
+                           data-bv-identical-field="password"
+                           data-bv-identical-message="The password and its confirm are not the same" />
                     <label for="confirmPassword">Confirm password</label>
                   </div>
                 </div>

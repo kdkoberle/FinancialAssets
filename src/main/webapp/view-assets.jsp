@@ -55,11 +55,11 @@
                                         <input type="hidden" name="id" value="${userAsset.userAssetId}"/>
                                         <input type="submit" class="btn btn-primary btn-block" value="Delete Asset"/>
                                     </Form>
-
-                                        <span><a href="/SoldAsset">Sold</a></span>
-                                        <span><a href="/EditAsset">Edit</a></span>
-                                        <span><a href="/DeleteAsset">Delete</a></span>
-                                    </div>
+                                    <br />
+                                    <Form action="/SoldAsset" method="POST">
+                                        <input type="hidden" name="id" value="${userAsset.userAssetId}"/>
+                                        <input type="submit" class="btn btn-primary btn-block" value="Sold Asset"/>
+                                    </Form>
                                 </td>
                             </tr>
                             </c:forEach>

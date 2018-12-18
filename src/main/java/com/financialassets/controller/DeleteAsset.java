@@ -23,6 +23,7 @@ public class DeleteAsset extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        // Get userAsset id, and correct object
         int id = 0;
         id = Integer.parseInt(request.getParameter("id"));
 

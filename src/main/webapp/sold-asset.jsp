@@ -20,61 +20,67 @@
             <h1>Sold Asset</h1>
             <hr>
 
-            <FORM ACTION="sold-asset" METHOD="POST">
-                <!-- -->
+            <FORM ACTION="sold-asset" METHOD="GET">
+                <!-- Asset Name -->
                 <div class="form-group">
                     <div class="form-label-group">
-                        <input type="name" id="name" class="form-control" placeholder="Asset Name" required="required" autofocus="autofocus" name="name">
+                        <input type="text" id="name" class="form-control" placeholder="Asset Name" required="required" autofocus="autofocus" name="name"
+                        value="${name}">
                         <label for="name">Asset Name</label>
                     </div>
                 </div>
-                <!-- -->
+                <!-- Date Bought -->
                 <div class="form-group">
                     <div class="form-label-group">
-                        <input type="dateBought" id="dateBought" class="form-control" placeholder="Date Bought (12/18/2018)" required="required" autofocus="autofocus" name="dateBought">
-                        <label for="dateBought">Date Bought (12/18/2018)</label>
+                        <input type="text" id="dateBought" class="form-control" placeholder="Date Bought (YYYY-MM-DD)"
+                               required="required" autofocus="autofocus" name="dateBought"
+                                value="${dateBought}" pattern="^\d{4}-\d{2}-\d{2}$">
+                        <label for="dateBought">Date Bought (YYYY-MM-DD)</label>
                     </div>
                 </div>
-                <!-- -->
+                <!-- Date Sold -->
                 <div class="form-group">
                     <div class="form-label-group">
-                        <input type="dateSold" id="dateSold" class="form-control" placeholder="Date Sold (12/18/2018)" required="required" name="dateSold">
-                        <label for="dateSold">Date Sold (12/18/2018)</label>
+                        <input type="text" id="dateSold" class="form-control" placeholder="Date Sold (YYYY-MM-DD)" required="required" name="dateSold"
+                               pattern="^\d{4}-\d{2}-\d{2}$">
+                        <label for="dateSold">Date Sold (YYYY-MM-DD))</label>
                     </div>
                 </div>
-                <!-- -->
+                <!-- Buy Price -->
                 <div class="form-group">
                     <div class="form-label-group">
-                        <input type="buyPrice" id="buyPrice" class="form-control" placeholder="Price Per Unit" required="required" name="buyPrice">
+                        <input type="text" id="buyPrice" class="form-control" placeholder="Price Per Unit" required="required" name="buyPrice"
+                        value="${price}">
                         <label for="buyPrice">Bought at Price Per Unit</label>
                     </div>
                 </div>
-                <!-- -->
+                <!-- Sell Price-->
                 <div class="form-group">
                     <div class="form-label-group">
-                        <input type="sellPrice" id="sellPrice" class="form-control" placeholder="Sold Price Per Unit" required="required" name="sellPrice">
+                        <input type="text" id="sellPrice" class="form-control" placeholder="Sold Price Per Unit" required="required" name="sellPrice">
                         <label for="sellPrice">Sold Price Per Unit</label>
                     </div>
                 </div>
 
-                <!-- -->
+                <!-- Quantity Bought -->
                 <div class="form-group">
                     <div class="form-label-group">
-                        <input type="qtyBought" id="qtyBought" class="form-control" placeholder="Quantity Bought" required="required" name="qtyBought">
+                        <input type="text" id="qtyBought" class="form-control" placeholder="Quantity Bought" required="required" name="qtyBought"
+                        value="${qtyBought}">
                         <label for="qtyBought">Quantity Bought</label>
                     </div>
                 </div>
 
-                <!-- -->
+                <!-- Additional Fees -->
                 <div class="form-group">
                     <div class="form-label-group">
-                        <input type="qtySold" id="qtySold" class="form-control" placeholder="Quantity Sold" required="required" name="qtySold">
-                        <label for="qtySold">Quantity Sold</label>
+                        <input type="text" id="additionalFees" class="form-control" placeholder="Additional Fees ($USD)" required="required" name="additionalFees">
+                        <label for="additionalFees">Additional Fees ($USD)</label>
                     </div>
                 </div>
 
 
-                <input type="submit" class="btn btn-primary btn-block" href="testing.jsp" value="Sold Asset" />
+                <input type="submit" class="btn btn-primary btn-block" href="/SoldAsset" value="Sold Asset" />
             </FORM>
         </div>
         <!-- /.container-fluid -->
