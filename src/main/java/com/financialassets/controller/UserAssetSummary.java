@@ -15,15 +15,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @WebServlet(
-        urlPatterns = {"/testing.jsp"}
+        //name="view-assets", urlPatterns = {"/view-assets.jsp"}
 )
 
 
 public class UserAssetSummary extends HttpServlet {
-
-
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         IEXChartClient client = new IEXChartClient();
@@ -38,16 +36,46 @@ public class UserAssetSummary extends HttpServlet {
         }
 
         List<UserAsset> userAssets;
-        DaoFactory assetsDao = new DaoFactory(UserAsset.class);
-        userAssets = assetsDao.getAll();
-        req.setAttribute("userAssets", userAssets);
+
+
+
+
         //req.setAttribute("stockData", stockData);
 
-        RequestDispatcher dispatcher = req.getRequestDispatcher("/view-assets.jsp");
-        dispatcher.forward(req, resp);
-        resp.sendRedirect("/view-assets.jsp");
+        if(req.isUserInRole("admin")) {
+            userAssets = getAllUserAssets();
+            req.setAttribute("userAssets", userAssets);
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/view-assets.jsp");
+            dispatcher.forward(req, resp);
+
+        } else if(req.isUserInRole("registered-user")) {
+            userAssets = getAllUserAssets();
+            req.setAttribute("userAssets", userAssets);
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/view-assets.jsp");
+            dispatcher.forward(req, resp);
+
+        } else {
+            userAssets = getAllUserAssets();
+            req.setAttribute("userAssets", userAssets);
+            RequestDispatcher dispatcher = req.getRequestDispatcher("/view-assets.jsp");
+            dispatcher.forward(req, resp);
+        }
 
 
+
+
+    }
+
+    public List<UserAsset> getAllUserAssets() {
+        DaoFactory assetsDao = new DaoFactory(UserAsset.class);
+        List<UserAsset> userAssets = assetsDao.getAll();
+
+        //set gain or loss
+        for (UserAsset asset : userAssets) {
+            asset.setUnsoldGainOrLoss(asset.getAssetName());
+        }
+
+        return userAssets;
     }
 
 }

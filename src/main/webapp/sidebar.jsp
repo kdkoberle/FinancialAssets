@@ -61,7 +61,7 @@
 <!-- Nonregistered Sidebar -->
 <ul class="sidebar navbar-nav">
     <li class="nav-item">
-        <a class="nav-link" href="login.jsp">
+        <a class="nav-link" href="view-assets.jsp">
             <span>Login</span></a>
     </li>
 

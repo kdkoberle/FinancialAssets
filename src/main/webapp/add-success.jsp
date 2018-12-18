@@ -12,7 +12,25 @@
 
     <div id="content-wrapper">
 
+        <div class="container-fluid">
+        <h1>Asset Added Successfully</h1>
+        <hr>
 
+            Stock symbol: ${name}
+            <br />
+            Date bought:  ${dateBought}
+            <br />
+            Quantity bought:  ${qtyBought}
+            <br />
+            Price:  $${price}
+            <br/>
+            Fees:  $${fees}
+            <br />
+            <br/>
+            <hr>
+
+            <input type="submit" class="btn btn-primary btn-block" value="Add Another Asset" action="add-asset.jsp"/>
+    </div>
 
     </div>
     <!-- /.container-fluid -->

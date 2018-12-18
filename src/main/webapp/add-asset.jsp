@@ -20,12 +20,12 @@
             <h1>Add Asset</h1>
             <hr>
 
-            <FORM ACTION="add-asset" METHOD="POST">
+            <FORM ACTION="${pageContext.request.contextPath}/AddAsset" METHOD="POST">
                 <!-- -->
                 <div class="form-group">
                     <div class="form-label-group">
-                        <input type="name" id="name" class="form-control" placeholder="Asset Name" required="required" autofocus="autofocus" name="name">
-                        <label for="name">Asset Name</label>
+                        <input type="name" id="name" class="form-control" placeholder="Stock Symbol" required="required" autofocus="autofocus" name="name">
+                        <label for="name">Stock Symbol</label>
                     </div>
                 </div>
                 <!-- -->
@@ -56,7 +56,7 @@
                         <label for="fees">Fees $USD (shipping, commission, etc)</label>
                     </div>
                 </div>
-                <input type="submit" class="btn btn-primary btn-block" href="testing.jsp" value="Add Asset" />
+                <input type="submit" class="btn btn-primary btn-block" value="Add Asset" />
             </FORM>
         </div>
         <!-- /.container-fluid -->

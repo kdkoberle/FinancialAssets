@@ -16,12 +16,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(
-        urlPatterns = {"/login.jsp"}
+        //urlPatterns = {"/lo.jsp"}
 )
 
 
 public class LoginServlet extends HttpServlet {
-
 
 
     @Override
@@ -57,10 +56,7 @@ public class LoginServlet extends HttpServlet {
             dispatcher.forward(req, resp);
 
         } else {
-            userAssets = getAllUserAssets();
-            req.setAttribute("userAssets", userAssets);
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/view-assets.jsp");
-            dispatcher.forward(req, resp);
+
         }
 
 
@@ -79,5 +75,6 @@ public class LoginServlet extends HttpServlet {
 
         return userAssets;
     }
+
 
 }

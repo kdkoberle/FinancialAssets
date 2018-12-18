@@ -16,9 +16,10 @@
     </form-login-config>
   </login-config>
 
+
   <security-constraint>
     <web-resource-collection>
-       <web-resource-name>view-assets</web-resource-name>
+       <web-resource-name>UserAssetSummary</web-resource-name>
        <url-pattern>/view-assets.jsp</url-pattern>
      </web-resource-collection>
      <auth-constraint>
@@ -53,6 +54,17 @@
     <web-resource-collection>
       <web-resource-name>remove-asset</web-resource-name>
       <url-pattern>/remove-asset.jsp</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>registered-user</role-name>
+      <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>AddAsset</web-resource-name>
+      <url-pattern>/add-asset.jsp</url-pattern>
     </web-resource-collection>
     <auth-constraint>
       <role-name>registered-user</role-name>

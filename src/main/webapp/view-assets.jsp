@@ -16,6 +16,7 @@
         <div class="container-fluid">
 
             <!-- DataTables Example -->
+            <h2>Username <c:out value="${sessionScope.username}"/></h2>
             <div class="card mb-3">
                 <div class="card-header">
                     <i class="fas fa-table"></i>

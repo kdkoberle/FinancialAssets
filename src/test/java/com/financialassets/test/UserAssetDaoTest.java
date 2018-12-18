@@ -21,13 +21,11 @@ class UserAssetDoaFactoryTest {
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     DaoFactory daoFactory;
-    Database db;
     /**
      * create a new DaoFactory for UserAsset before each test
      */
     @BeforeEach
     void setUp() {
-        com.financialassets.test.util.Database database = com.financialassets.test.util.Database.getInstance();
         //database.runSQL("cleandb.sql");
 
         daoFactory = new DaoFactory(UserAsset.class);
@@ -61,9 +59,9 @@ class UserAssetDoaFactoryTest {
     //TODO get this test working
     @Test
     void testSaveOrUpdate() {
-        String newAssetName = "Gold";
+        String newAssetName = "AU";
         UserAsset userAssetToUpdate = (UserAsset)daoFactory.getById(3);
-        userAssetToUpdate.setAssetName("Gold");
+        userAssetToUpdate.setAssetName("AU");
         daoFactory.saveOrUpdate(userAssetToUpdate);
 
 
@@ -85,10 +83,12 @@ class UserAssetDoaFactoryTest {
         user = (User)userDaoFactory.getById(1);
         assertEquals("Keith", user.getFirstName());
         double buyPrice = 14.50;
-        UserAsset newUAsset = new UserAsset(user, buyPrice, LocalDate.now(), 50, "Silver");
-        newUAsset.setAssetId(2);
+        UserAsset newUAsset = new UserAsset(user, buyPrice, LocalDate.now(), 50, "AG", 4.95);
+
         daoFactory.insert(newUAsset);
-        assertEquals(4, daoFactory.getAll().size());
+
+
+        assertEquals(6, daoFactory.getAll().size());
     }
 
     /**

@@ -2,12 +2,14 @@
 <body class="bg-dark">
 
 <div class="container">
-    <h4>Incorrect Email or Password</h4>
+
     <div class="card card-login mx-auto mt-5">
+        <h4>Incorrect Email or Password</h4>
         <div class="card-header">Login</div>
         <div class="card-body">
 
             <FORM ACTION="j_security_check" METHOD="POST">
+
                 <div class="form-group">
                     <div class="form-label-group">
                         <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="required" autofocus="autofocus" name="j_username">

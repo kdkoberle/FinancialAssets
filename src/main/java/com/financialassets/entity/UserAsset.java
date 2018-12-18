@@ -49,8 +49,6 @@ public class UserAsset {
     foreignKey = @ForeignKey(name = "user_asset_id_fk"))
     private User user;
 
-    @Column(name = "asset_id")
-    private int assetId;
 
     @Transient
     private double gainOrLossDollar;
@@ -246,13 +244,7 @@ public class UserAsset {
         this.user = user;
     }
 
-    public int getAssetId() {
-        return assetId;
-    }
 
-    public void setAssetId(int assetId) {
-        this.assetId = assetId;
-    }
 
     /**
      * No arg constructor
@@ -268,13 +260,13 @@ public class UserAsset {
      * @param qty       the qty
      * @param assetName the asset name
      */
-    public UserAsset(User user, double buyPrice, LocalDate buyDate, Integer qty, String assetName) {
+    public UserAsset(User user, double buyPrice, LocalDate buyDate, Integer qty, String assetName, Double fees) {
         this.buyPrice = buyPrice;
         this.buyDate = buyDate;
         this.qty = qty;
         this.assetName = assetName;
         this.user = user;
-
+        this.fees = fees;
 
     }
 
