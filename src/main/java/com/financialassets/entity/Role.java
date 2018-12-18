@@ -5,7 +5,6 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.ejb.Local;
 import javax.persistence.*;
 
-//TODO fix up error page
 
 @Entity(name = "Role")
 @Table(name = "role")
@@ -25,7 +24,7 @@ public class Role {
     )
     private User user;
 
-    private int userId;
+    //private int userId;
 
     private String role;
 
@@ -87,11 +86,18 @@ public class Role {
         this.role = role;
     }
 
-    public int getUserId() {
+    /*public int getUserId() {
         return userId;
     }
 
     public void setUserId(int userId) {
         this.userId = userId;
+    }*/
+
+    public Role(String email, User user, String role) {
+        this.email = email;
+        this.user = user;
+        //this.userId = userId;
+        this.role = role;
     }
 }

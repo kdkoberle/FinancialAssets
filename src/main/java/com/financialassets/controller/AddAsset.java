@@ -16,6 +16,8 @@ import java.time.LocalDate;
 @WebServlet(
         name="AddAsset", urlPatterns = "/AddAsset"
 )
+
+//todo validation error handling
 public class AddAsset extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -33,12 +35,18 @@ public class AddAsset extends HttpServlet {
         String name = request.getParameter("name").toUpperCase();
         LocalDate buyDate = LocalDate.parse(request.getParameter("dateBought"));
         Integer qty = Integer.parseInt(request.getParameter("qtyBought"));
-        double buyPrice = Double.parseDouble(request.getParameter("price"));
+        double price = Double.parseDouble(request.getParameter("price"));
         double fees = Double.parseDouble(request.getParameter("fees"));
 
-        userAsset = new UserAsset(user, buyPrice, buyDate, qty, name, fees);
+        userAsset = new UserAsset(user, price, buyDate, qty, name, fees);
 
         userAssetDao.insert(userAsset);
+
+        request.setAttribute("price", price);
+        request.setAttribute("dateBought", buyDate);
+        request.setAttribute("name", name);
+        request.setAttribute("qtyBought", qty);
+        request.setAttribute("fees", fees);
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/add-success.jsp");
 

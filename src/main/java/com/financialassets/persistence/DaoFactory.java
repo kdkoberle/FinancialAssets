@@ -110,4 +110,21 @@ public class DaoFactory<T> {
         return insertedId;
     }
 
+/*
+    public List<T> selectWhere(String column, String value) {
+
+        Session session = getSession();
+        Transaction transaction = session.beginTransaction();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+
+        CriteriaQuery<T> query = builder.createQuery(type);
+        Root<T> root = query.from(type);
+
+        List<T> elements = session.createQuery(query).getResultList();
+        transaction.commit();
+        session.close();
+
+        return  elements;
+    }*/
+
 }

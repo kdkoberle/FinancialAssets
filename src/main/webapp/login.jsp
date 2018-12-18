@@ -27,14 +27,13 @@
                 </label>
               </div>
             </div>
-            <input type="submit" class="btn btn-primary btn-block" href="testing.jsp" value="Login" />
+            <input type="submit" class="btn btn-primary btn-block" value="Login" />
           </FORM>
 
 
 
           <div class="text-center">
             <a class="d-block small mt-3" href="register.jsp">Register an Account</a>
-            <a class="d-block small" href="forgot-password.jsp">Forgot Password?</a>
           </div>
         </div>
       </div>
