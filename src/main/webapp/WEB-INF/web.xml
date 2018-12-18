@@ -19,7 +19,7 @@
 
   <security-constraint>
     <web-resource-collection>
-       <web-resource-name>UserAssetSummary</web-resource-name>
+       <web-resource-name>ViewAssets</web-resource-name>
        <url-pattern>/view-assets.jsp</url-pattern>
      </web-resource-collection>
      <auth-constraint>
@@ -28,20 +28,10 @@
      </auth-constraint>
   </security-constraint>
 
-  <security-constraint>
-    <web-resource-collection>
-      <web-resource-name>edit-asset</web-resource-name>
-      <url-pattern>/edit-asset.jsp</url-pattern>
-    </web-resource-collection>
-    <auth-constraint>
-      <role-name>registered-user</role-name>
-      <role-name>admin</role-name>
-    </auth-constraint>
-  </security-constraint>
 
   <security-constraint>
     <web-resource-collection>
-      <web-resource-name>sold-asset</web-resource-name>
+      <web-resource-name>SoldAsset</web-resource-name>
       <url-pattern>/sold-asset.jsp</url-pattern>
     </web-resource-collection>
     <auth-constraint>
@@ -52,8 +42,19 @@
 
   <security-constraint>
     <web-resource-collection>
-      <web-resource-name>remove-asset</web-resource-name>
-      <url-pattern>/remove-asset.jsp</url-pattern>
+      <web-resource-name>EditAsset</web-resource-name>
+      <url-pattern>/edit-asset.jsp</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>registered-user</role-name>
+      <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>DeleteAsset</web-resource-name>
+      <url-pattern>/delete-asset.jsp</url-pattern>
     </web-resource-collection>
     <auth-constraint>
       <role-name>registered-user</role-name>

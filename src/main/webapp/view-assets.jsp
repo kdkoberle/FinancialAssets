@@ -35,6 +35,7 @@
                                 <th>Fees</th>
                                 <th>(Un)Realized Gain/Loss $</th>
                                 <th>(Un)Realized Gain/Loss %</th>
+                                <th></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -49,6 +50,13 @@
                                 <td>$ ${userAsset.fees}</td>
                                 <td>$ ${userAsset.gainOrLossDollar}</td>
                                 <td>${userAsset.gainOrLossPercent} %</td>
+                                <td>
+                                    <div name="${userAsset.userAssetId}">
+                                        <span><a href="/SoldAsset">Sold</a></span>
+                                        <span><a href="/EditAsset">Edit</a></span>
+                                        <span><a href="/DeleteAsset">Delete</a></span>
+                                    </div>
+                                </td>
                             </tr>
                             </c:forEach>
                             </tbody>
