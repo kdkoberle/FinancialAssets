@@ -30,3 +30,5 @@
 |12/14 | Hibernate Database, working again, working on servlets | 2 | |
 | 12/15 | Servlets jsps mostly (fixed problem where was expecting int but needed Integer | 3 |
 | 12/16 | Much progress with servlets, responsive site based on user, implementing iex api meaningfully, calculations for gain loss, more jsps, removed test jsp | 4.5 |
+| 12/17 | Adding assets, registering users servlets and jsps | 6 | need validation still |
+
