@@ -31,8 +31,11 @@
                 <!-- -->
                 <div class="form-group">
                     <div class="form-label-group">
-                        <input type="dateBought" id="dateBought" class="form-control" placeholder="Date Bought (12/18/2018)" required="required" autofocus="autofocus" name="dateBought">
-                        <label for="dateBought">Date Bought (12/18/2018)</label>
+                        <input type="dateBought" id="dateBought" class="form-control" placeholder="Date Bought (YYYY-MM-DD)"
+                               required="required" autofocus="autofocus" name="dateBought"
+                               pattern="^\d{4}-\d{2}-\d{2}$">
+                        <label for="dateBought">Date Bought (YYYY-MM-DD)</label>
+
                     </div>
                 </div>
                 <!-- -->
@@ -74,7 +77,7 @@
 <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
 </a>
-
+<script type="text/javascript" src="js/popper.min.js"></script>
 
 <!-- Bootstrap core JavaScript-->
 <script src="vendor/jquery/jquery.min.js"></script>
