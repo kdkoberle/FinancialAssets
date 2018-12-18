@@ -27,6 +27,7 @@ public class AddAsset extends HttpServlet {
         DaoFactory userDao;
         DaoFactory userAssetDao;
         UserAsset userAsset;
+
         userDao = new DaoFactory(User.class);
         List<User> userList = userDao.getAll();
 
