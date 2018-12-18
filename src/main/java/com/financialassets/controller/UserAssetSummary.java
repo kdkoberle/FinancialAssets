@@ -2,6 +2,7 @@ package com.financialassets.controller;
 
 import com.financialassets.apiclient.IEXChartClient;
 import com.financialassets.apiclient.IEXChartResponse;
+import com.financialassets.entity.User;
 import com.financialassets.entity.UserAsset;
 import com.financialassets.persistence.DaoFactory;
 
@@ -11,13 +12,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.annotation.*;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 
 @WebServlet(
-        //name="view-assets", urlPatterns = {"/view-assets.jsp"}
+        name="view-assets", urlPatterns = {"/ViewAssets"}
 )
 
 
@@ -36,29 +38,34 @@ public class UserAssetSummary extends HttpServlet {
         }
 
         List<UserAsset> userAssets;
+        String email = req.getRemoteUser();
+        int userId = 0;
+        //Get user's id
+        DaoFactory userDao = new DaoFactory(User.class);
+        List<User> users = userDao.getAll();
+
+        for (User user : users) {
+            if(user.getEmail().equals(email)) {
+                userId = user.getUserId();
+            }
+        }
 
 
 
-
-        //req.setAttribute("stockData", stockData);
 
         if(req.isUserInRole("admin")) {
-            userAssets = getAllUserAssets();
+            userAssets = getAllUserAssets(userId);
             req.setAttribute("userAssets", userAssets);
             RequestDispatcher dispatcher = req.getRequestDispatcher("/view-assets.jsp");
             dispatcher.forward(req, resp);
 
         } else if(req.isUserInRole("registered-user")) {
-            userAssets = getAllUserAssets();
+            userAssets = getAllUserAssets(userId);
             req.setAttribute("userAssets", userAssets);
             RequestDispatcher dispatcher = req.getRequestDispatcher("/view-assets.jsp");
             dispatcher.forward(req, resp);
 
         } else {
-            userAssets = getAllUserAssets();
-            req.setAttribute("userAssets", userAssets);
-            RequestDispatcher dispatcher = req.getRequestDispatcher("/view-assets.jsp");
-            dispatcher.forward(req, resp);
         }
 
 
@@ -66,13 +73,19 @@ public class UserAssetSummary extends HttpServlet {
 
     }
 
-    public List<UserAsset> getAllUserAssets() {
-        DaoFactory assetsDao = new DaoFactory(UserAsset.class);
-        List<UserAsset> userAssets = assetsDao.getAll();
+    public List<UserAsset> getAllUserAssets(int userId) {
 
-        //set gain or loss
-        for (UserAsset asset : userAssets) {
-            asset.setUnsoldGainOrLoss(asset.getAssetName());
+        DaoFactory assetsDao = new DaoFactory(UserAsset.class);
+        List<UserAsset> allUserAssets = assetsDao.getAll();
+
+        List<UserAsset> userAssets = new ArrayList<UserAsset>();
+
+        //get only user assets
+        for (UserAsset asset : allUserAssets) {
+            if (asset.getUser().getUserId() == userId) {
+                asset.setUnsoldGainOrLoss(asset.getAssetName());
+                userAssets.add(asset);
+            }
         }
 
         return userAssets;

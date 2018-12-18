@@ -11,24 +11,17 @@
 <!-- Admin Sidebar -->
 <% if (request.isUserInRole("admin")) { %>
 <ul class="sidebar navbar-nav">
-
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-fw fa-folder"></i>
-            <span>Assets Tracker</span>
-        </a>
-        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-            <h6 class="dropdown-header">Assets Tracker:</h6>
-            <a class="dropdown-item" href="view-assets.jsp">Asset Summary</a>
-            <a class="dropdown-item" href="add-asset.jsp">Add Asset</a>
-            <a class="dropdown-item" href="sold-asset.jsp">Sold Asset</a>
-            <a class="dropdown-item" href="edit-asset.jsp">Edit Asset</a>
-            <a class="dropdown-item" href="remove-asset.jsp">Remove Asset</a>
-            <div class="dropdown-divider"></div>
-        </div>
+    <li class="nav-item">
+        <a class="nav-link" href="/ViewAssets">
+            <span>Asset Summary</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="logout.jsp">
+        <a class="nav-link" href="/add-asset.jsp">
+            <span>Add Asset</span></a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="${pageContext.request.contextPath}/Logout">
             <span>Logout</span></a>
     </li>
 </ul>
@@ -36,32 +29,25 @@
 
 <!-- Registered User Sidebar -->
 <ul class="sidebar navbar-nav">
+    <li class="nav-item">
+        <a class="nav-link" href="/ViewAssets">
+            <span>Asset Summary</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/add-asset.jsp">
+            <span>Add Asset</span></a>
+    </li>
 
-<li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <i class="fas fa-fw fa-folder"></i>
-        <span>Assets Tracker</span>
-    </a>
-    <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-        <h6 class="dropdown-header">Assets Tracker:</h6>
-        <a class="dropdown-item" href="view-assets.jsp">Asset Summary</a>
-        <a class="dropdown-item" href="add-asset.jsp">Add Asset</a>
-        <a class="dropdown-item" href="sold-asset.jsp">Sold Asset</a>
-        <a class="dropdown-item" href="edit-asset.jsp">Edit Asset</a>
-        <a class="dropdown-item" href="remove-asset.jsp">Remove Asset</a>
-        <div class="dropdown-divider"></div>
-    </div>
-</li>
-<li class="nav-item">
-    <a class="nav-link" href="logout.jsp">
-        <span>Logout</span></a>
-</li>
+    <li class="nav-item">
+        <a class="nav-link" href="${pageContext.request.contextPath}/Logout">
+            <span>Logout</span></a>
+    </li>
 </ul>
 <% } else { %>
 <!-- Nonregistered Sidebar -->
 <ul class="sidebar navbar-nav">
     <li class="nav-item">
-        <a class="nav-link" href="view-assets.jsp">
+        <a class="nav-link" href="landing-page.jsp">
             <span>Login</span></a>
     </li>
 

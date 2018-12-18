@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.List;
 
 @WebServlet(
         name="AddAsset", urlPatterns = "/AddAsset"
@@ -21,14 +22,22 @@ import java.time.LocalDate;
 public class AddAsset extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        String email = request.getRemoteUser();
+        User userMatch = new User();
         DaoFactory userDao;
         DaoFactory userAssetDao;
         UserAsset userAsset;
-        User user;
-
         userDao = new DaoFactory(User.class);
-        user = (User)userDao.getById(3);
+        List<User> userList = userDao.getAll();
+
+
+
+        //Get correct user object
+        for (User user : userList) {
+            if(user.getEmail().equals(email)) {
+                userMatch = user;
+            }
+        }
 
         userAssetDao = new DaoFactory(UserAsset.class);
 
@@ -38,7 +47,7 @@ public class AddAsset extends HttpServlet {
         double price = Double.parseDouble(request.getParameter("price"));
         double fees = Double.parseDouble(request.getParameter("fees"));
 
-        userAsset = new UserAsset(user, price, buyDate, qty, name, fees);
+        userAsset = new UserAsset(userMatch, price, buyDate, qty, name, fees);
 
         userAssetDao.insert(userAsset);
 

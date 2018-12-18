@@ -255,10 +255,12 @@ public class UserAsset {
     /**
      * Instantiates a new User asset.
      *
+     *
      * @param buyPrice  the buy price
      * @param buyDate   the buy date
      * @param qty       the qty
      * @param assetName the asset name
+     *
      */
     public UserAsset(User user, double buyPrice, LocalDate buyDate, Integer qty, String assetName, Double fees) {
         this.buyPrice = buyPrice;

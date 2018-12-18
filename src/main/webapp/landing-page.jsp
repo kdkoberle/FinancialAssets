@@ -1,3 +1,4 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@include file="head.jsp"%>
 
 
@@ -13,28 +14,23 @@
     <div id="content-wrapper">
 
         <div class="container-fluid">
-            <h1>Registration Successful</h1>
-            <hr>
 
-            <h4>Thank you for registering, ${firstName}</h4>
-            <br />
-            <br/>
-            <hr>
-            <br />
-            <br />
-            <div class="text-center">
-                <a class="d-block small mt-3" href="view-assets.jsp">Login Page</a>
+            <!-- DataTables Example -->
+            <h2>Hello <c:out value="${sessionScope.getRemoteUser}"/></h2>
+            <div class="card mb-3">
+
+
             </div>
+
         </div>
+        <!-- /.container-fluid -->
+
+        <!-- Sticky Footer -->
+        <!-- Sticky Footer -->
+        <%@include file="footer.jsp"%>
 
     </div>
-    <!-- /.container-fluid -->
-
-    <!-- Sticky Footer -->
-    <%@include file="footer.jsp"%>
-
-</div>
-<!-- /.content-wrapper -->
+    <!-- /.content-wrapper -->
 
 </div>
 <!-- /#wrapper -->
@@ -62,8 +58,6 @@
         </div>
     </div>
 </div>
-<!-- Sticky Footer -->
-<%@include file="footer.jsp"%>
 
 <!-- Bootstrap core JavaScript-->
 <script src="vendor/jquery/jquery.min.js"></script>
@@ -82,6 +76,7 @@
 
 <!-- Demo scripts for this page-->
 <script src="js/demo/datatables-demo.js"></script>
+<script src="js/demo/chart-area-demo.js"></script>
 
 </body>
 

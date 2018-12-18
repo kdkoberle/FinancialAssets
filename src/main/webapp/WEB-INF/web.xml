@@ -72,6 +72,17 @@
     </auth-constraint>
   </security-constraint>
 
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>LandingPage</web-resource-name>
+      <url-pattern>/landing-page.jsp</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>registered-user</role-name>
+      <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
+
   <security-role>
     <role-name>registered-user</role-name>
   </security-role>

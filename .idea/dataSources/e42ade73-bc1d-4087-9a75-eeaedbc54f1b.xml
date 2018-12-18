@@ -1168,7 +1168,7 @@
       <UnderlyingIndexName>role_user_id_uindex</UnderlyingIndexName>
     </key>
     <foreign-key id="292" parent="278" name="role_user_id_fk">
-      <ColNames>id</ColNames>
+      <ColNames>user_id</ColNames>
       <RefSchemaName>FinancialAssets</RefSchemaName>
       <RefTableName>user</RefTableName>
       <RefColNames>user_id</RefColNames>
