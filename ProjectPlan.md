@@ -33,29 +33,15 @@
 ### Week 7
 - [x] Get user logged in basic working
 - [x]  and basic logging in complete
-- [ ] Get user creation working
-- [ ] Get a good start on user asset page summary working
+- [x] Get user creation working
+- [x] Get a good start on user asset page summary working
 
 
 ### Week 8
-- [ ] Finish remove asset
-- [ ] Get asset sold selector working/complete
-- [ ] At least begin on Sold Asset Single page
-- [ ] Begin with graphs
-- [ ] Find a good Web hosting service
-- [ ] Get stock ticker tracker / asset tracker working
-- [ ] ?Integrate stock ticker tracker w/ API?
-
-### Week 9
-- [ ] Complete Sold Single Asset page
-- [ ] Color coding for gain loss
-- [ ] Graphing!!
-
-### Week 10
-- [ ] Rigorous testing of functionality/logic
-
-### Week 11
-- [ ] Graphing done
-
-### Week 12
-- [ ]  Project Complete!
+- [x] Finish remove asset
+- [x] Get asset sold selector working/complete
+- [x] At least begin on Sold Asset Single page
+- [x] Begin with graphs
+- [x] Find a good Web hosting service
+- [x] Get stock ticker tracker / asset tracker working
+- [x] ?Integrate stock ticker tracker w/ API?
