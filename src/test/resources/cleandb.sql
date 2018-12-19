@@ -1,7 +1,7 @@
 SET foreign_key_checks = 0;
-DELETE FROM role;
-DELETE FROM user;
-DELETE FROM user_asset;
+drop table role;
+drop table user_asset;
+drop table user;
 SET foreign_key_checks = 1;
 
 

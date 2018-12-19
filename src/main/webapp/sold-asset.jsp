@@ -20,7 +20,7 @@
             <h1>Sold Asset</h1>
             <hr>
 
-            <FORM ACTION="/SoldAsset" METHOD="GET">
+            <FORM ACTION="${pageContext.request.contextPath}/SoldAsset" METHOD="GET">
                 <!-- Asset Name -->
                 <div class="form-group">
                     <div class="form-label-group">

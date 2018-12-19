@@ -51,13 +51,13 @@
                                 <td>$ ${userAsset.gainOrLossDollar}</td>
                                 <td>${userAsset.gainOrLossPercent} %</td>
                                 <td>
-                                    <Form action="/SoldAsset" method="POST">
+                                    <Form action="${pageContext.request.contextPath}/SoldAsset" method="POST">
                                         <input type="hidden" name="id" value="${userAsset.userAssetId}"/>
                                         <input type="submit" class="btn btn-primary btn-block" value="Sold"/>
                                     </Form>
                                 </td>
                                 <td>
-                                    <Form action="/DeleteAsset" method="POST">
+                                    <Form action="${pageContext.request.contextPath}/DeleteAsset" method="POST">
                                         <input type="hidden" name="id" value="${userAsset.userAssetId}"/>
                                         <input type="submit" class="btn btn-primary btn-block" value="Delete"/>
                                     </Form>
