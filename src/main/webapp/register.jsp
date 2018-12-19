@@ -26,7 +26,8 @@
             </div>
             <div class="form-group">
               <div class="form-label-group">
-                <input type="email" id="email" class="form-control" placeholder="Email address" required="required" name="email">
+                <input type="email" id="email" class="form-control" placeholder="Email address" required="required" name="email"
+                pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$">
                 <label for="email">Email address</label>
               </div>
             </div>

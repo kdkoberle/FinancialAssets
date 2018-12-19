@@ -36,8 +36,8 @@
 
 
             <div class="text-center">
-                <a class="d-block small mt-3" href="register.jsp">Register an Account</a>
-                <a class="d-block small" href="forgot-password.jsp">Forgot Password?</a>
+                <a class="d-block small mt-3" href="${pageContext.request.contextPath}/register.jsp">Register an Account</a>
+                <a class="d-block small" href="${pageContext.request.contextPath}/forgot-password.jsp">Forgot Password?</a>
             </div>
         </div>
     </div>
