@@ -2,6 +2,7 @@ package com.financialassets.controller;
 
 import com.financialassets.entity.User;
 import com.financialassets.entity.UserAsset;
+import com.financialassets.persistence.Common;
 import com.financialassets.persistence.DaoFactory;
 
 import javax.servlet.RequestDispatcher;
@@ -57,18 +58,11 @@ public class DeleteAsset extends HttpServlet {
             }
         }
 
-        allUserAssets = userAssetDao.getAll();
-        List<UserAsset> matchUserAssets = new ArrayList<UserAsset>();
 
         //Set gain loss
-        for (UserAsset userAsset : allUserAssets) {
-            if(userAsset.getUser().getUserId() == userId) {
-                userAsset.setUnsoldGainOrLoss(userAsset.getAssetName());
-                matchUserAssets.add(userAsset);
-            }
-        }
+        List<UserAsset> matchOfUserAssets = new Common().matchUserAssets(userId);
 
-        request.setAttribute("userAssets", matchUserAssets);
+        request.setAttribute("userAssets", matchOfUserAssets);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/view-assets.jsp");
         dispatcher.forward(request, response);
 

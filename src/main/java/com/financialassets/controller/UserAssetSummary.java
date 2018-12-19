@@ -4,6 +4,7 @@ import com.financialassets.apiclient.IEXChartClient;
 import com.financialassets.apiclient.IEXChartResponse;
 import com.financialassets.entity.User;
 import com.financialassets.entity.UserAsset;
+import com.financialassets.persistence.Common;
 import com.financialassets.persistence.DaoFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -30,11 +31,12 @@ public class UserAssetSummary extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        IEXChartClient client = new IEXChartClient();
+        /**
+         IEXChartClient client = new IEXChartClient();
         List<IEXChartResponse> stockData = new ArrayList<>();
 
 
-        /**
+
         try {
             stockData = client.getJSONResults("tsla", "5y");
         } catch (Exception e){
@@ -84,18 +86,7 @@ public class UserAssetSummary extends HttpServlet {
      */
     public List<UserAsset> getAllUserAssets(int userId) {
 
-        DaoFactory assetsDao = new DaoFactory(UserAsset.class);
-        List<UserAsset> allUserAssets = assetsDao.getAll();
-
-        List<UserAsset> userAssets = new ArrayList<UserAsset>();
-
-        //get only user assets
-        for (UserAsset asset : allUserAssets) {
-            if (asset.getUser().getUserId() == userId) {
-                asset.setUnsoldGainOrLoss(asset.getAssetName());
-                userAssets.add(asset);
-            }
-        }
+        List<UserAsset> userAssets = new Common().matchUserAssets(userId);
 
         return userAssets;
     }
