@@ -12,11 +12,11 @@
 <% if (request.isUserInRole("admin")) { %>
 <ul class="sidebar navbar-nav">
     <li class="nav-item">
-        <a class="nav-link" href="/ViewAssets">
+        <a class="nav-link" href="${pageContext.request.contextPath}/ViewAssets">
             <span>Asset Summary</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/add-asset.jsp">
+        <a class="nav-link" href="${pageContext.request.contextPath}/add-asset.jsp">
             <span>Add Asset</span></a>
     </li>
 
@@ -30,11 +30,11 @@
 <!-- Registered User Sidebar -->
 <ul class="sidebar navbar-nav">
     <li class="nav-item">
-        <a class="nav-link" href="/ViewAssets">
+        <a class="nav-link" href="${pageContext.request.contextPath}/ViewAssets">
             <span>Asset Summary</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/add-asset.jsp">
+        <a class="nav-link" href="${pageContext.request.contextPath}/add-asset.jsp">
             <span>Add Asset</span></a>
     </li>
 
@@ -47,12 +47,12 @@
 <!-- Nonregistered Sidebar -->
 <ul class="sidebar navbar-nav">
     <li class="nav-item">
-        <a class="nav-link" href="landing-page.jsp">
+        <a class="nav-link" href="${pageContext.request.contextPath}/landing-page.jsp">
             <span>Login</span></a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="register.jsp">
+        <a class="nav-link" href="${pageContext.request.contextPath}/register.jsp">
             <span>Register</span></a>
     </li>
 

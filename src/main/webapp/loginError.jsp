@@ -30,7 +30,7 @@
                         </label>
                     </div>
                 </div>
-                <input type="submit" class="btn btn-primary btn-block" href="testing.jsp" value="Login" />
+                <input type="submit" class="btn btn-primary btn-block" value="Login" />
             </FORM>
 
 

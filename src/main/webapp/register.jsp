@@ -55,7 +55,7 @@
             <input type="submit" class="btn btn-primary btn-block"  value="Register" />
           </form>
           <div class="text-center">
-            <a class="d-block small mt-3" href="view-assets.jsp">Login Page</a>
+            <a class="d-block small mt-3" href="${pageContext.request.contextPath}/view-assets.jsp">Login Page</a>
           </div>
         </div>
       </div>

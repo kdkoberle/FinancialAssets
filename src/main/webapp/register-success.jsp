@@ -23,7 +23,7 @@
             <br />
             <br />
             <div class="text-center">
-                <a class="d-block small mt-3" href="view-assets.jsp">Login Page</a>
+                <a class="d-block small mt-3" href="${pageContext.request.contextPath}view-assets.jsp">Login Page</a>
             </div>
         </div>
 
@@ -57,7 +57,7 @@
             <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
             <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.jsp">Logout</a>
+                <a class="btn btn-primary" href="${pageContext.request.contextPath}login.jsp">Logout</a>
             </div>
         </div>
     </div>

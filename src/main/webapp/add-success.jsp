@@ -30,8 +30,8 @@
             <hr>
             <br/>
             <div>
-                <a href="/add-asset.jsp" class="btn btn-lg btn-success btn-block">Add Another Asset</a>
-                <a href="/ViewAssets" class="btn btn-lg btn-success btn-block">View All Assets</a>
+                <a href="${pageContext.request.contextPath}/add-asset.jsp" class="btn btn-lg btn-success btn-block">Add Another Asset</a>
+                <a href="${pageContext.request.contextPath}/ViewAssets" class="btn btn-lg btn-success btn-block">View All Assets</a>
             </div>
 
     </div>
