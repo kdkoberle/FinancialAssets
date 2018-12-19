@@ -73,7 +73,6 @@ public class UserAsset {
         return gainOrLossPercent;
     }
 
-    //TODO figure in commisions, fees
     public void setUnsoldGainOrLoss(String name) {
         IEXQuoteClient quoteClient = new IEXQuoteClient();
         DecimalFormat dollarFormat = new DecimalFormat("#.####");

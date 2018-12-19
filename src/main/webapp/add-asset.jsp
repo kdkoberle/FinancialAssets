@@ -41,7 +41,8 @@
                 <!-- -->
                 <div class="form-group">
                     <div class="form-label-group">
-                        <input type="qtyBought" id="qtyBought" class="form-control" placeholder="Quantity Bought" required="required" name="qtyBought">
+                        <input type="qtyBought" id="qtyBought" class="form-control" placeholder="Quantity Bought" required="required" name="qtyBought"
+                               pattern="^\d*$">
                         <label for="qtyBought">Quantity Bought</label>
                     </div>
                 </div>

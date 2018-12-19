@@ -60,6 +60,7 @@ public class DeleteAsset extends HttpServlet {
                 matchUserAssets.add(userAsset);
             }
         }
+
         request.setAttribute("userAssets", matchUserAssets);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/view-assets.jsp");
         dispatcher.forward(request, response);

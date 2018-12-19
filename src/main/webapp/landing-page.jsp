@@ -16,7 +16,7 @@
         <div class="container-fluid">
 
             <!-- DataTables Example -->
-            <h2>Hello <c:out value="${sessionScope.getRemoteUser}"/></h2>
+            <h2>Welcome to the Financial Assets Tracker</h2>
             <div class="card mb-3">
 
 

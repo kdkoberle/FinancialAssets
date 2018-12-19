@@ -18,16 +18,24 @@ import java.util.List;
 )
 
 public class SoldAsset extends HttpServlet {
+
+    //variables for get and post
+    private int id = 0;
+    private DaoFactory userAssetDao = new DaoFactory(UserAsset.class);
+    private UserAsset userAssetMatch = new UserAsset();
+
+
+
+    // handles post sent from view-assets.jsp
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
 
         // Get userAsset id, and correct object
-        int id = 0;
+
         id = Integer.parseInt(request.getParameter("id"));
-        DaoFactory userAssetDao = new DaoFactory(UserAsset.class);
+
         List<UserAsset> allUserAssets = userAssetDao.getAll();
-        UserAsset userAssetMatch = new UserAsset();
 
         for (UserAsset userAsset : allUserAssets) {
             if(userAsset.getUserAssetId() == id) {
@@ -54,5 +62,22 @@ public class SoldAsset extends HttpServlet {
 
     }
 
+
+
+    //handles get from sold-assets.jsp
+    @Override
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+            double additionalFees = Double.parseDouble(request.getParameter("addtionalFees"));
+            LocalDate soldDate = LocalDate.parse(request.getParameter("soldDate"));
+            double sellPrice = Double.parseDouble(request.getParameter("sellPrice"));
+
+
+
+
+
+
+    }
 
 }

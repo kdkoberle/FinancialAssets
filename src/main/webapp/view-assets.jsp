@@ -16,7 +16,6 @@
         <div class="container-fluid">
 
             <!-- DataTables Example -->
-            <h2>Username <c:out value="${sessionScope.username}"/></h2>
             <div class="card mb-3">
                 <div class="card-header">
                     <i class="fas fa-table"></i>
@@ -36,6 +35,7 @@
                                 <th>(Un)Realized Gain/Loss $</th>
                                 <th>(Un)Realized Gain/Loss %</th>
                                 <th></th>
+                                <th></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -51,14 +51,15 @@
                                 <td>$ ${userAsset.gainOrLossDollar}</td>
                                 <td>${userAsset.gainOrLossPercent} %</td>
                                 <td>
-                                    <Form action="/DeleteAsset" method="POST">
-                                        <input type="hidden" name="id" value="${userAsset.userAssetId}"/>
-                                        <input type="submit" class="btn btn-primary btn-block" value="Delete Asset"/>
-                                    </Form>
-                                    <br />
                                     <Form action="/SoldAsset" method="POST">
                                         <input type="hidden" name="id" value="${userAsset.userAssetId}"/>
-                                        <input type="submit" class="btn btn-primary btn-block" value="Sold Asset"/>
+                                        <input type="submit" class="btn btn-primary btn-block" value="Sold"/>
+                                    </Form>
+                                </td>
+                                <td>
+                                    <Form action="/DeleteAsset" method="POST">
+                                        <input type="hidden" name="id" value="${userAsset.userAssetId}"/>
+                                        <input type="submit" class="btn btn-primary btn-block" value="Delete"/>
                                     </Form>
                                 </td>
                             </tr>

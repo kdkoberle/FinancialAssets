@@ -66,7 +66,7 @@
                 <div class="form-group">
                     <div class="form-label-group">
                         <input type="text" id="qtyBought" class="form-control" placeholder="Quantity Bought" required="required" name="qtyBought"
-                        value="${qtyBought}">
+                        value="${qtyBought}" pattern="^\d*$">
                         <label for="qtyBought">Quantity Bought</label>
                     </div>
                 </div>
