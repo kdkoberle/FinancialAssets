@@ -1,4 +1,4 @@
-package com.financialassets.test;
+package com.financialassets.apiclient;
 
 import com.financialassets.apiclient.IEXQuoteClient;
 import com.financialassets.apiclient.IEXQuoteResponse;

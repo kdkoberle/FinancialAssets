@@ -3,7 +3,7 @@ package com.financialassets.test;
 import com.financialassets.entity.User;
 import com.financialassets.entity.UserAsset;
 import com.financialassets.persistence.DaoFactory;
-import com.financialassets.test.util.Database;
+import com.financialassets.util.Database;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
@@ -19,6 +19,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class UserAssetDoaFactoryTest {
     private final Logger logger = LogManager.getLogger(this.getClass());
+    Database database;
 
     DaoFactory daoFactory;
     /**
@@ -26,7 +27,7 @@ class UserAssetDoaFactoryTest {
      */
     @BeforeEach
     void setUp() {
-        //database.runSQL("cleandb.sql");
+        database.runSQL("cleandb.sql");
 
         daoFactory = new DaoFactory(UserAsset.class);
     }

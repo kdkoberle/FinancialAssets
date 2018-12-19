@@ -1,6 +1,5 @@
 package com.financialassets.persistence;
 
-import com.financialassets.entity.User;
 import com.financialassets.entity.UserAsset;
 
 import java.util.ArrayList;
@@ -9,6 +8,11 @@ import java.util.List;
 public class Common {
 
 
+    /**
+     *
+     * @param userId
+     * @return list of UserAssets belonging to userId
+     */
     public List<UserAsset> matchUserAssets(int userId) {
         DaoFactory userAssetDao = new DaoFactory(UserAsset.class);
 
