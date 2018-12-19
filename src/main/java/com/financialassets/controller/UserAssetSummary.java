@@ -5,6 +5,8 @@ import com.financialassets.apiclient.IEXChartResponse;
 import com.financialassets.entity.User;
 import com.financialassets.entity.UserAsset;
 import com.financialassets.persistence.DaoFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -24,18 +26,20 @@ import java.util.List;
 
 
 public class UserAssetSummary extends HttpServlet {
+    private final Logger logger = LogManager.getLogger(this.getClass());
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         IEXChartClient client = new IEXChartClient();
         List<IEXChartResponse> stockData = new ArrayList<>();
 
-        //TODO finish error handling
 
+        /**
         try {
             stockData = client.getJSONResults("tsla", "5y");
         } catch (Exception e){
 
-        }
+        }*/
 
         List<UserAsset> userAssets;
         String email = req.getRemoteUser();
@@ -73,6 +77,11 @@ public class UserAssetSummary extends HttpServlet {
 
     }
 
+    /**
+     *
+     * @param userId
+     * @return List of all userassets in database
+     */
     public List<UserAsset> getAllUserAssets(int userId) {
 
         DaoFactory assetsDao = new DaoFactory(UserAsset.class);

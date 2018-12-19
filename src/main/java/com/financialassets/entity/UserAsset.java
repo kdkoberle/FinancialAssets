@@ -64,15 +64,27 @@ public class UserAsset {
     }
 
 
-
+    /**
+     *
+     * @return the gain or loss of the asset in USD
+     */
     public double getGainOrLossDollar() {
         return gainOrLossDollar;
     }
 
+    /**
+     *
+     * @return the gain or loss percent
+     */
     public double getGainOrLossPercent() {
         return gainOrLossPercent;
     }
 
+    /**
+     *
+     * @param name the stock symbol
+     *
+     */
     public void setUnsoldGainOrLoss(String name) {
         IEXQuoteClient quoteClient = new IEXQuoteClient();
         DecimalFormat dollarFormat = new DecimalFormat("#.####");
@@ -84,7 +96,7 @@ public class UserAsset {
         if (sellPrice == null) {
             try {
                 IEXQuoteResponse quote = quoteClient.getJSONResults(this.assetName);
-                longDollar = (quote.getLatestPrice() - buyPrice - fees)  * qty;
+                longDollar = (quote.getLatestPrice() - buyPrice)  * qty - fees;
                 longPercent = (longDollar / (buyPrice * qty)) * 100;
 
                 this.gainOrLossDollar = Double.parseDouble(dollarFormat.format(longDollar));
@@ -96,7 +108,7 @@ public class UserAsset {
 
         // If sold
         } else {
-            longDollar = (sellPrice.doubleValue() - buyPrice - fees)  * qty;
+            longDollar = (sellPrice.doubleValue() - buyPrice) * qty - fees;
             longPercent = (longDollar / (buyPrice * qty)) * 100;
 
             this.gainOrLossDollar = Double.parseDouble(dollarFormat.format(longDollar));
@@ -107,10 +119,18 @@ public class UserAsset {
     }
 
 
+    /**
+     *
+     * @return all associated fees
+     */
     public double getFees() {
         return fees;
     }
 
+    /**
+     *
+     * @param fees all asset associated fees
+     */
     public void setFees(double fees) {
         this.fees = fees;
     }

@@ -14,6 +14,15 @@ import java.io.IOException;
     )
 public class Logout extends HttpServlet {
 
+    /**
+     *
+     * @param req
+     * @param resp
+     * @throws ServletException
+     * @throws IOException
+     *
+     *  invalidates session and sends to index page
+     */
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         HttpSession session = req.getSession(false);

@@ -19,7 +19,14 @@ import java.util.List;
 )
 public class DeleteAsset extends HttpServlet {
 
-
+    /**
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     * This servlet gets the asset_id from view-assets and deletes that asset from the database
+     */
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 

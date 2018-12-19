@@ -20,7 +20,7 @@
             <h1>Sold Asset</h1>
             <hr>
 
-            <FORM ACTION="sold-asset" METHOD="GET">
+            <FORM ACTION="/SoldAsset" METHOD="GET">
                 <!-- Asset Name -->
                 <div class="form-group">
                     <div class="form-label-group">
@@ -80,7 +80,7 @@
                 </div>
 
 
-                <input type="submit" class="btn btn-primary btn-block" href="/SoldAsset" value="Sold Asset" />
+                <input type="submit" class="btn btn-primary btn-block" value="Sold Asset" />
             </FORM>
         </div>
         <!-- /.container-fluid -->

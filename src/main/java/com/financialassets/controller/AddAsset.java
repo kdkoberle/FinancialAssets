@@ -18,7 +18,18 @@ import java.util.List;
         name="AddAsset", urlPatterns = "/AddAsset"
 )
 
+
 public class AddAsset extends HttpServlet {
+
+
+    /**
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     * This servlet gets information from the add-asset page and adds a new UserAsset to the database
+     */
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String email = request.getRemoteUser();

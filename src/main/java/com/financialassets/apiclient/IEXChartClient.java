@@ -42,6 +42,13 @@ public class IEXChartClient {
         return results;
     }
 
+    /**
+     *
+     * @param mediaType
+     * @param targetUrl
+     * @param stockChart
+     * @return
+     */
     private String getResponse(String mediaType, String targetUrl, List<IEXChartResponse> stockChart) {
 
         Client client = ClientBuilder.newClient();

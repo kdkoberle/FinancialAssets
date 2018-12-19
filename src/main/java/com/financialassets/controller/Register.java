@@ -20,6 +20,17 @@ import java.util.List;
 //todo validation error handling
 
 public class Register extends HttpServlet {
+
+    /**
+     *
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     *
+     * takes information from the register page and adds a new user into the database, then sends user to a
+     * confirmation page
+     */
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
