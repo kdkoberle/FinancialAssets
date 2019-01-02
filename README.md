@@ -14,3 +14,14 @@ different asset classes.
 
 ### Technologies Utilized
 
+* Tomee7
+* MySQL for storing user and user asset information
+* Hibernate 5 for database integration
+* Bootstrap for CSS
+* Maven
+* The IEX Trading REST API, using Jackson
+* JUnit for unit testing
+* Log4J2
+* JDBC for user Authentication
+
+
