@@ -11,3 +11,6 @@ or even more websites, one may wish to only view one.  To that end, I have decid
 put together a web application which will keep track of losses and gains, as well as showing
 one where their unrealized gains are at, especially in relation to past gains/losses and across
 different asset classes.
+
+### Technologies Utilized
+
